@@ -1,0 +1,37 @@
+{
+	"status": 1,
+	"msg": "success",
+	"data": {
+		"session_id": "577e00bd1ae07366368b4610",
+		"parent_session_id": "577e00bd1ae07366368b4611",
+		"ad_type": 215,
+		"template": 0,
+		"unit_size": "0x0",
+		"html_url": "",
+		"ads": [{
+			"id": 1060657,
+			"title": "Crusaders Quest",
+			"desc": "Celebrate our 10 million download milestone with NEW HEROES and new adventures! Match your way to victory in the new epic action RPG from TOAST, Crusaders Quest!",
+			"package_name": "com.nhnent.SKQUEST",
+			"icon_url": "http:\/\/d11kdtiohse1a9.cloudfront.net\/common\/2015\/11\/20\/22\/21\/64bbb5d3c2e460a33d50f8ebc7eaaec7_201511202220181448029218502_128X128.png",
+			"image_url": "http:\/\/d11kdtiohse1a9.cloudfront.net\/common\/2015\/07\/08\/com.nhnent.SKQUEST1436352371.53_1200X627.JPEG",
+			"image_size": "1200x627",
+			"impression_url": "http:\/\/test-net.rayjump.com\/impression?k=577e00bd1ae0736636b46121&p=NTQ4OHwyNDk5NXw4MDF8NDU3fDEwNjA2NTd8NDk5MjEyMXxvcGVuYXBpfHVua25vd258MTIwMHg2Mjd8N3xBbmRyb2lkfDYuMHxqc18xLjAuMHx8fDB8SEt8fHVua25vd258fGFkX3NlcnZlcnx8RGVmYXVsdEZvck0zNjBzZWNCbGFja2xpc3RSYW5rZXJfb2xkXzEuMS4wLjB8OTdiY2ZlMzEtN2M0Yy01OTI3LTg1ODktZGM0NGY1ZGQ2MmNjfDU3N2UwMGJkMWFlMDczNjYzNmI0NjEyMXx8MXwtMXx8fDU3N2UwMGJkMWFlMDczNjYzNmI0NjEzMXwzOS4xMDkuMTI0LjY3fHx8fHx8fHx8fHx8MzkuMTA5LjEyNC42N3w1NzdlMDBiZDFhZTA3MzY2MzY4YjQ2MTB8NTc3ZTAwYmQxYWUwNzM2NjM2OGI0NjExfHx8MXx8fDZ8N3x8fA%3D%3D&x=0",
+			"click_url": "http:\/\/tracking.lenzmx.com\/click?mb_pl=android&mb_nt=cb441&mb_campid=nhn_cq_4&aff_sub=fHRlc3QtbmV0LnJheWp1bXAuY29tfDU3N2UwMGJkMWFlMDczNjYzNmI0NjEzMXw1NDg4fDI0OTk1fDgwMXx8N3xIS3w1NzdlMDBiZDFhZTA3MzY2MzZiNDYxMjF8NDU3fDEwNjA2NTd8N3wwfHxhZF9zZXJ2ZXJ8My41fDMuNXwtMXwx&mb_subid=24995&mb_devid=&mb_gaid=",
+			"notice_url": "http:\/\/test-net.rayjump.com\/click?k=577e00bd1ae0736636b46121&p=NTQ4OHwyNDk5NXw4MDF8NDU3fDEwNjA2NTd8NDk5MjEyMXxvcGVuYXBpfHVua25vd258MTIwMHg2Mjd8N3xBbmRyb2lkfDYuMHxqc18xLjAuMHx8fDB8SEt8fHVua25vd258fGFkX3NlcnZlcnx8RGVmYXVsdEZvck0zNjBzZWNCbGFja2xpc3RSYW5rZXJfb2xkXzEuMS4wLjB8OTdiY2ZlMzEtN2M0Yy01OTI3LTg1ODktZGM0NGY1ZGQ2MmNjfDU3N2UwMGJkMWFlMDczNjYzNmI0NjEyMXx8MXwtMXx8MHw1NzdlMDBiZDFhZTA3MzY2MzZiNDYxMzF8MzkuMTA5LjEyNC42N3x8fHx8fHx8fHx8fDM5LjEwOS4xMjQuNjd8NTc3ZTAwYmQxYWUwNzM2NjM2OGI0NjEwfDU3N2UwMGJkMWFlMDczNjYzNjhiNDYxMXx8fDF8fHw2fDd8fHw%3D&notice=1",
+			"fca": 5,
+			"fcb": 10,
+			"template": 6,
+			"ad_source_id": 1,
+			"app_size": "38",
+			"click_mode": 0,
+			"rating": 4.4,
+			"landing_type": 2,
+			"ctatext": "Install",
+			"c_ct": 86400,
+			"ttc_ct": 604800,
+			"ttc": false
+		}],
+		"only_impression_url": "http:\/\/test-net.rayjump.com\/onlyImpression?k=577e00bd1ae0736636b46121&p=NTQ4OHwyNDk5NXw4MDF8fHx8b3BlbmFwaXx1bmtub3dufDMwMHgzMDB8N3xBbmRyb2lkfDYuMHxqc18xLjAuMHx8fDB8SEt8fHVua25vd258fGFkX3NlcnZlcnwxMDYwNjU3fERlZmF1bHRGb3JNMzYwc2VjQmxhY2tsaXN0UmFua2VyX29sZF8xLjEuMC4wfDk3YmNmZTMxLTdjNGMtNTkyNy04NTg5LWRjNDRmNWRkNjJjY3w1NzdlMDBiZDFhZTA3MzY2MzZiNDYxMjF8MXwxfHx8fDU3N2UwMGJkMWFlMDczNjYzNmI0NjEyMXwzOS4xMDkuMTI0LjY3fHx8fHx8fHx8fHx8MzkuMTA5LjEyNC42N3w1NzdlMDBiZDFhZTA3MzY2MzY4YjQ2MTB8NTc3ZTAwYmQxYWUwNzM2NjM2OGI0NjExfHx8MXx8fDZ8N3x8fA%3D%3D"
+	}
+}

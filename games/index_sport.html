@@ -1,0 +1,691 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+          <title>TALENT GAME BOX. The best casual games.</title>
+          <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
+          <!-- for Google -->
+            <meta name="keywords" content="game" />
+            <meta name="author" content="Leemissen" />
+            <meta name="copyright" content="TALENT" />
+            <meta name="application-name" content="TALENT GAME BOX" />
+            <meta name="description" content="TALENT GAME BOX. The best casual games.">
+
+
+
+            <!-- for Facebook -->  
+            <meta property="og:title" content="TALENT GAME BOX" />
+            <meta property="og:type" content="game" />
+            <meta property="og:image" id="gameIcon" content="http://www.rayjump.com/images/talent_logo.png" />
+            <meta property="og:description" content="TALENT GAME BOX. The best casual games." /> 
+            <meta property="og:url" content="http://www.rayjump.com">
+            <meta property="og:site_name" content="TALENT">
+
+            
+        <!-- for Twitter -->          
+            <meta name="twitter:card" content="Game" />
+            <meta name="twitter:title" content="TALENT GAME BOX" />
+            <meta name="twitter:description" content="TALENT GAME BOX. The best casual games." />
+            <meta name="twitter:image" content="http://www.rayjump.com/images/talent_logo.png" /> 
+
+          <script src="assets/js/template.js"></script>
+          <script src="assets/js/swipe.js"></script>
+  <link rel="stylesheet" href="assets/css/home.catalog.css">
+        <style type="text/css">
+        
+        
+        </style>
+    </head>
+    <body>
+        <header id="header">
+            <dl class="left">
+                <dt onclick="catalogMask.show()"></dt>
+            </dl>
+            <dl class="center">
+                <dt></dt>
+            </dl>
+            <dl class="right">
+                <dt onclick="toggleMaskMenu(true)"></dt>
+            </dl>
+        </header>
+
+        <div id='mySwipe' style='margin: 0px auto; visibility: visible;' class='swipe'>
+           
+        </div>
+
+       
+
+        <div id="game_list" style=" margin: 0px auto; visibility: visible;margin-left:16px;margin-right:16px;">
+            
+        </div>
+        <script id="gameList" type="text/html">
+            {{each rows as value i}}
+                <a class="{{value.gameClass}}" href="{{value.href}}" target="_self" style="background-image: url('{{value.icon}}')">
+                    <h3 class="title">{{value.title}}</h3>
+                </a>
+            {{/each}}
+        </script>
+
+        <div id="load_more" style="display:none">MORE</div>
+
+        <link rel="stylesheet" href="css/mask.css">
+        <div id="maskMenu" class="mask">
+            <di class="maskContainer" id="maskContainer" style="display:fixed">
+                <div class="maskContent show" id="maskContent">
+                    <h3><span id="st">SHARE WITH YOUR FRIENDS</span></h3>
+                    <div class="addthis_sharing_toolbox share-custom row feed">
+                        <a class='addthis_button_facebook facebook'></a>
+                        <a class='addthis_button_twitter twitter'></a>
+                        <a class='addthis_button_google_plusone_share googleplus'></a>
+                        
+                    </div>
+                    <div id="cancel_share_btn" class="cancel btn" onclick="toggleMaskMenu(false);"><span id="sc">Cancel</span></div>
+                </div>
+            </div>
+        </div>
+
+
+        <script type="text/javascript">
+        var gameCatagory = 'Sport';
+        var zoomMinRate = Math.floor(document.body.clientWidth/480*100)/100;
+        var zoomMaxRate = Math.floor(1/zoomMinRate*100)/150;
+        document.getElementById('maskContent').style.zoom = zoomMinRate;
+
+        var mediationHost = 'http://net.rayjump.com/site/profile';
+        window.talentGameCatalogs = [
+                                        {'text':'Childhood','key':'childhood'},
+                                        {'text':'Cards','key':'cards'},
+                                        {'text':'Puzzle','key':'puzzle'},
+                                        {'text':'Shooter','key':'shooter'},
+                                        {'text':'Defense','key':'defense'},
+                                        // {'text':'Beauty','key':'beauty'},
+                                        {'text':'Racing','key':'racing'},
+                                        {'text':'Masochism','key':'masochism'},
+                                        {'text':'Jump & Run','key':'jumprun'},
+                                        {'text':'Sport','key':'sport'}
+                                    ];
+        window.talentZIndex = {
+            'catalogMask':'99999999'
+        };
+
+        var bestScreenSize = {
+            width:480,
+            height:720
+        };
+        window.availableScreenSize = {
+            width:480,
+            height:720
+        };
+
+        var currentScreen = getScreenSize();
+        if(currentScreen.width/currentScreen.height>bestScreenSize.width/bestScreenSize.height){
+            availableScreenSize.height = currentScreen.height;
+            availableScreenSize.width = bestScreenSize.width*availableScreenSize.height/bestScreenSize.height;
+        }else{
+            availableScreenSize.width = currentScreen.width;
+            availableScreenSize.height = bestScreenSize.height*availableScreenSize.width/bestScreenSize.width;
+        }
+
+        function getScreenSize() {
+            var testWidthEl = document.createElement('div');
+                testWidthEl.setAttribute('style', 'display:block;position:fixed;left:0px;right:0px;top:0px;bottom:0px;visibility:hidden;z-index:99999;');
+            window.document.body.appendChild(testWidthEl);
+            var screenWidth = testWidthEl.clientWidth;
+            var screenHeight = testWidthEl.clientHeight;
+            window.document.body.removeChild(testWidthEl);
+            return {
+                width: screenWidth,
+                height: screenHeight
+            };
+        }
+
+        document.getElementById('sc').style.fontSize = (1.3*zoomMaxRate)+'em';
+        document.getElementById('st').style.fontSize = (1.17*zoomMaxRate)+'em';
+
+        var maskContentTimer;
+        function toggleMaskMenu(switcher){
+        if(maskContentTimer) clearTimeout(maskContentTimer);
+        var mask = document.getElementById('maskMenu');
+        var maskContent = document.getElementById('maskContent');
+        if(switcher){
+            mask.className = 'mask show';
+            maskContentTimer = setTimeout(function(){
+                maskContent.className = 'maskContent show';
+            },200);
+        }else{
+            mask.className = 'mask';
+            maskContentTimer = setTimeout(function(){
+                maskContent.className = 'maskContent';
+            },200);
+        }
+        }
+
+        document.getElementById('maskContainer').onclick = function(e){
+            if(e.toElement.className=='maskContainer'){
+                toggleMaskMenu(false);
+            }
+        }
+        </script>
+        <footer id="footer">
+            <p>©2015 TALENT GAME BOX</p>
+        </footer>
+
+    </body>
+
+    <script type="text/javascript">
+        var browser={
+            versions:function(){
+                    var u = navigator.userAgent, app = navigator.appVersion;
+                    return { 
+                        trident: u.indexOf('Trident') > -1, 
+                        presto: u.indexOf('Presto') > -1, 
+                        webKit: u.indexOf('AppleWebKit') > -1, 
+                        gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+                        mobile: !!u.match(/AppleWebKit.*Mobile.*/), 
+                        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), 
+                        android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, 
+                        iPhone: u.indexOf('iPhone') > -1 , 
+                        iPad: u.indexOf('iPad') > -1, 
+                        webApp: u.indexOf('Safari') == -1 
+                    };
+                }(),
+                language:(navigator.browserLanguage || navigator.language).toLowerCase()
+        };
+
+        function getQueryString(url, name) {
+            var spliter = '?';
+            if (url.indexOf(spliter) < 0) return null;
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+            var r = url.split(spliter)[1].match(reg);
+            if (r != null) return unescape(r[2]);
+            return null;
+        }
+        var sign = getQueryString(window.location.href, 's')
+            ||'668d571bff3dc16a26ad81642c64504d';
+        var appId = getQueryString(window.location.href, 'appId')||
+                    getQueryString(window.location.href, 'appid')||'17019';
+        var menuConfig = getQueryString(window.location.href, 'hmenu')||'';
+        var menuString = menuConfig.length>0 ? '&hmenu='+ menuConfig : '';
+
+        var talentGA = {
+            hasInit:false,
+            GAId:'UA-62639739-1',
+            homeKey:window.location.host,
+            jumpKey:'jump',
+            jumpType:{
+                'home':'home',
+                'home_banner':'home_banner',
+                'game':'game',
+                'share':'share'
+            },
+            referrer:'firstEnter',
+            _loadGA:function(callback){
+                var me = this;
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+                ga('create', me.GAId, 'auto');
+                ga('send','pageview');
+                me.hasInit = true;
+                if(callback) callback();
+            },
+            checkEnter:function(){
+                var me = this;
+                if(me.hasInit==true){
+                    me._checkEnter();
+                }else{
+                    me._loadGA(function(){
+                     me._checkEnter();   
+                    });
+                }
+            },
+            _checkEnter:function(){
+                var me = this;
+                var appId = getQueryString(window.location.href,'appId')||
+                    getQueryString(window.location.href, 'appid')||'17019';
+                ga('send', 'event', 'load', 'homeLink', appId);
+
+                var jumpType = getQueryString(window.location.href,me.jumpKey);
+                if(!jumpType||jumpType.length==0||document.referrer.indexOf(me.homeKey)<0){
+                    ga('send', 'event', 'load', 'firstEnter', appId);
+                }else if(jumpType==me.jumpType['home']){
+                    ga('send', 'event', 'load', 'fromHome', appId);
+                }else if(jumpType==me.jumpType['game']){
+                    ga('send', 'event', 'load', 'fromGame', appId);
+                }else if(jumpType==me.jumpType['share']){
+                    ga('send', 'event', 'load', 'fromShare', appId);
+                }
+            }
+        }
+
+        function ajax (url, parms) {
+            parms = parms || {};
+            var req = new XMLHttpRequest(),
+                post = parms.post || null,
+                callback = parms.callback || null,
+                timeout = parms.timeout || null;
+
+            req.onreadystatechange = function () {
+                if ( req.readyState != 4 ) return;
+
+                    // console.log(req.status)
+                // Error
+                if ( req.status != 200 && req.status != 304 && req.status != 0) {
+                    if ( callback ) callback(false);
+                    return;
+                }
+
+                if ( callback ) callback(req.responseText);
+            };
+
+            if ( post ) {
+                req.open('POST', url, true);
+                req.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            } else {
+                req.open('GET', url, true);
+            }
+
+            req.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+
+            req.send(post);
+
+            if ( timeout ) {
+                setTimeout(function () {
+                    req.onreadystatechange = function () {};
+                    req.abort();
+                    if ( callback ) callback(false);
+                }, timeout);
+            }
+        }
+
+
+        function mobvistaJSONPAjax(win) {
+            var me = this;
+            var isIE = !1,
+                doc = win.document,
+                head = doc.getElementsByTagName('head')[0];
+
+            function request(param) {
+
+                var url = param.url + parseToUrl(param.data); //.filterByTime(0,'minute').toIdString();
+                var success = param.success;
+                var error = param.error;
+                var timestamp = param.timestamp;
+                var script = doc.createElement('script');
+
+                function callback() {
+                    eval("if(!window." + param.data.jsonp + "){jsonp = undefined;}else{ jsonp = " + param.data.jsonp + "}");
+                    if (typeof jsonp != 'undefined') {
+                        success(jsonp);
+                    } else {
+                        console.log('warning: jsonp did not return.');
+                        if(param.error) param.error();
+                    }
+                    // Handle memory leak in IE
+                    script.onload = script.onreadystatechange = null;
+                    if (head && script.parentNode) {
+                        head.removeChild(script);
+                    }
+                }
+                if (isIE) {
+                    script.onreadystatechange = function() {
+                        var readyState = this.readyState;
+                        if (readyState == 'loaded' || readyState == 'complete') {
+                            callback();
+                        }
+                    }
+                } else {
+                    script.onload = function() {
+                        callback();
+                    };
+                    script.onerror = function(){
+                        if(error) error();
+                    };
+                }
+                if (timestamp) {
+                    url += '&ts=' + (new Date).getTime();
+                }
+                script.src = url;
+                head.insertBefore(script, head.firstChild);
+            }
+
+            return {
+                load: request
+            };
+        }(window);
+
+        function parseToUrl(data) {
+            var result = '';
+            for (var key in data) {
+                result += key + '=' + data[key] + '&';
+            }
+            if (result.length > 0) {
+                result = result.substring(0, result.length - 1);
+            }
+            return result;
+        }
+
+        function insertAD(pubID,slotID){
+            var adScript = document.createElement('script');
+            adScript.src = 'http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+            adScript.onload = function(){
+                var adSlot = document.createElement('a');
+                adSlot.className = 'sense';
+                var ins = document.createElement('ins');
+                ins.setAttribute('class','adsbygoogle');
+                ins.setAttribute('style','display:block;height:100%;width:100%;');
+                ins.setAttribute('data-ad-client',pubID);
+                ins.setAttribute('data-ad-slot',slotID);
+                adSlot.appendChild(ins);
+                var adSlotIndex = Math.floor(Math.random()*(gamesCount>6?6:gamesCount));
+                
+                var game_list = document.getElementById('game_list');
+                game_list.insertBefore(adSlot,game_list.children[adSlotIndex]);
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            }
+            document.body.appendChild(adScript);
+        }
+
+        var page = 1;
+        var gamesCount = 0;
+
+        function requestGameData (target, count) {
+            ajax('game_list.json', {
+                callback: function (data) {
+
+                    // console.log(data)
+                    data = JSON.parse(data);
+
+                    var gameIndexObj = {};
+                    var gameList = [];
+                    var gameCounting = 0;
+                    var gameRows = data.data.gameList.rows;
+                    var gameFilter = data.data.gameFilter[appId]||'';
+                    gameFilter = gameFilter.split(',');
+                    var filterObj = {};
+                    for(var n=0;n<gameFilter.length;n++){
+                        filterObj[gameFilter[n]] = true;
+                    }
+                    // console.log(data.data.gameList.rows.length)
+                    for(var i=0,iMax = gameRows.length;i<iMax;i++){
+                        var gameData = gameRows[i];
+                        var gameId = gameData.gameId;
+                        var gameTitle = gameData.name;//encodeURI(gameData.name);
+                        var gameUrl;
+
+                        if(gameCatagory.toLowerCase()!='All Games'.toLowerCase()&&gameData['catagory'].toLowerCase()!=gameCatagory.toLowerCase()) continue;
+                        if(browser.versions.android==true&&gameData.android==false) continue;
+                        if(browser.versions.ios==true&&gameData.ios==false) continue;
+                        if(filterObj[gameData['gameId'].toString()]==true) continue;
+                        gameIndexObj[gameData.gameId] = gameCounting++;
+
+                        if(window.location.host.indexOf('apus')>=0){
+                            gameUrl = gameData.openLink.split('&')[0]+'?s='+sign+'&appId='+appId+menuString;
+                        }else if(browser.versions.android){
+                            if(gameData.bestAndroid == 'iframe'){
+                                gameUrl = 'view.html?s='+sign+'&appId='+appId
+                                            +'&openLink='+gameData.openLink
+                                            +'&title='+gameData.title
+                                            +'&shareLink='+gameData.openLink
+                                            +'&gameIcon='+gameData.icon+menuString;
+                            }else{//directLink
+                                gameUrl = gameData.openLink.split('&')[0]+'?s='+sign+'&appId='+appId+menuString;
+                            }
+                            
+                        }else if(browser.versions.ios){
+                            if(gameData.bestIos == 'iframe'){
+                                gameUrl = 'view.html?s='+sign+'&appId='+appId
+                                            +'&openLink='+gameData.openLink
+                                            +'&title='+gameData.title
+                                            +'&shareLink='+gameData.openLink
+                                            +'&gameIcon='+gameData.icon+menuString;
+                            }else{//directLink
+                                gameUrl = gameData.openLink.split('&')[0]+'?s='+sign+'&appId='+appId+menuString;
+                            }
+                        }else{
+                            gameUrl = gameData.openLink.split('&')[0]+'?s='+sign+'&appId='+appId+menuString;
+                        }
+                        gameUrl+= '&'+talentGA.jumpKey+'='+talentGA.jumpType.home;
+                         
+                        var gameClass = gameData.gameClass||'';
+                        var gameBrick = gameData.image.replace('icon','brick');
+                        var gameBanner_t = gameData.image.replace('icon','banner_t');
+                        gameList.push({
+                            gameId:gameId,
+                            title:gameTitle,
+                            href:gameUrl,
+                            icon:gameBrick,
+                            banner:gameBanner_t,
+                            gameClass:gameClass
+                        });
+                    }
+
+                    if (page === 1) {
+                        var banner = {rows:[]};
+                        var bannerIndexList = data.data['banner_t'];
+                        var randomCheck={},gameLength = data.data['gameList'].rows.length;
+                        var bannerCount = gameLength>bannerIndexList.length ? 
+                            data.data['banner_t'].length : gameLength;
+                       
+                       
+
+                        var gameListHTML = template('gameList',{rows:gameList});
+                        target.innerHTML = gameListHTML+'<div class="clearfix" style="margin-bottom:30px;"></div>';
+
+                        
+
+                        //Stop the AD in Home Page
+                        // requestMediaData();
+                    }
+                    gamesCount+=gameList.length;
+                    page++;
+                }
+            });
+        }
+
+        function requestMediaData(){
+            var timescape = Date.parse(new Date()).toString();
+            var callbackKey = timescape + Math.random().toString().split('.')[1];
+            mobvistaJSONPAjax(window).load({
+                url: mediationHost+'?',
+                type: 'get',
+                timeout: '1000',
+                contentType: 'JSON',
+                timestamp: true,
+                dataType: 'jsonp',
+                data:{
+                    app_id:appId,
+                    sign:sign,
+                    jsonp: "jsonp" + callbackKey
+                },
+                success: function(result) {
+                    // console.log(result)
+                    var pubID = null;
+                    var slotID = null
+                    for(var i = 0;i<result.data.length;i++){
+                        if(result.data[i].name=='adsense'){
+                            pubID = result.data[i]['pubID'];
+                            slotID = result.data[i]['weight']['overlay']['unitID'];
+                            break;
+                        }
+                    }
+
+                    if(!pubID) pubID = 'ca-pub-2204455335532111';
+                    if(!slotID) slotID = '6968968787';
+                    insertAD(pubID,slotID);
+                    
+                },
+                error:function(){
+                    var pubID = 'ca-pub-2204455335532111';
+                    var slotID = '6968968787';
+                    insertAD(pubID,slotID);
+                }
+            });
+        }
+
+        var catalogMask = {
+            catalogs:window.talentGameCatalogs,
+            isInit:false,
+            mask:null,
+            catalogListContainer:null,
+            catalogMaskTimer:null,
+            show:function(talentContainer){
+                var me = this;
+                if(me.isInit!=true||me.mask==null){
+                    if(!talentContainer) talentContainer=document.body;
+                    me.init(talentContainer)
+                }
+                me.mask.className = 'show';
+                if(me.catalogMaskTimer) clearTimeout(me.catalogMaskTimer);
+                me.catalogMaskTimer = setTimeout(function(){
+                    me.catalogListContainer.className = 'catalogListContainer show';
+                },300);
+
+            },
+            hide:function(){
+                var me = this;
+                if(me.isInit){
+                    me.mask.className = '';
+                    if(me.catalogMaskTimer) clearTimeout(me.catalogMaskTimer);
+                    me.catalogListContainer.className = 'catalogListContainer';
+                }
+            },
+            init:function(talentContainer){
+                var me = this;
+                var appId = getQueryString(window.location.href,'appId')||
+                        getQueryString(window.location.href,'appid')||'17019';
+                var sign = getQueryString(window.location.href,'s')||'668d571bff3dc16a26ad81642c64504d';
+                var jump ='share';
+                var hmenu = (menuConfig&&menuConfig.length>0)?'&hmenu='+menuConfig:'';
+                var urlParam = '?appId='+appId+'&s='+sign+'&jump='+jump+hmenu;
+                var mask = document.createElement('div');
+                mask.id='talentCatalogContainer';
+                // mask.style['display'] = 'block';
+                mask.style['position'] = 'fixed';
+                mask.style['left'] = '0px';
+                mask.style['right'] = '0px';
+                mask.style['top'] = '0px';
+                mask.style['bottom'] = '0px';
+                mask.style['backgroundColor'] = 'rgba(0,0,0,0.7)';
+                mask.style['zIndex'] = window.talentZIndex['catalogMask'];
+                talentContainer.appendChild(mask);
+                me.mask = mask;
+                mask.onclick = function(e){
+                    if(e.toElement.id=='talentCatalogContainer'){me.hide();};
+                };
+
+
+                var itemFontSize = Math.floor(availableScreenSize.height*18/1280);
+                var itemHeight = Math.floor(availableScreenSize.height*62/1280);
+                var itemHeightHalf = Math.ceil(itemHeight/2);
+                var itemHeightQuao = Math.ceil(itemHeight/2.5);
+                var itemIndent = Math.floor(availableScreenSize.width*70/720);
+                var listContainerWidth = Math.floor(availableScreenSize.width*352/720);
+
+                var listContainer = document.createElement('div');
+                me.catalogListContainer = listContainer;
+                listContainer.className = 'catalogListContainer'
+                listContainer.style['width'] = listContainerWidth+'px';
+                listContainer.style['height'] = '100%';
+                listContainer.style['backgroundColor'] = 'white';
+                listContainer.style['position'] = 'fixed';
+                listContainer.style['left'] = '0px';
+                listContainer.style['top'] = '0px';
+                listContainer.innerHTML = '<style>'
+                                        +'#talentCatalogContainer{display:none;}'
+                                        +'#talentCatalogContainer.show{display:block;}'
+                                        +'.catalogListContainer{-webkit-transition:all 0.3s ease-in;-moz-transition:all 0.3s ease-in;-ms-transition:all 0.3s ease-in;-o-transition:all 0.3s ease-in;transition:all 0.3s ease-in;-webkit-transform:translateX(-'+(listContainerWidth+itemHeightHalf)+'px);-moz-transform:translateX(-'+(listContainerWidth+itemHeightHalf)+'px);-ms-transform:translateX(-'+(listContainerWidth+itemHeightHalf)+'px);-o-transform:translateX(-'+(listContainerWidth+itemHeightHalf)+'px);transform:translateX(-'+(listContainerWidth+itemHeightHalf)+'px);}'
+                                        +'#talentCatalogContainer.show .catalogListContainer.show{-webkit-transform:translateX(0px);-moz-transform:translateX(0px);-ms-transform:translateX(0px);-o-transform:translateX(0px);transform:translateX(0px);}'
+                                        +'.catalogListContainer{font-family:"Myriad_Pro_Regular";color:#303030;font-size:'+itemFontSize+'px;}'
+                                        +'.catalogListContainer .home{background-color:#f36f21;color:white;position:relative;}'
+                                        +'.catalogListContainer .home:after{content:" ";display:block;position:absolute;right:-'+(itemHeightQuao*2)+'px;top:0px;'
+                                                +'width:0px;height:0px;border:'+itemHeightHalf+'px solid transparent;border-left:'+itemHeightQuao+'px solid #f36f21;border-right:'+itemHeightQuao+'px solid transparent;}'
+                                        +'.catalogListContainer>a{text-decoration:none;color:#303030;}'
+                                        +'.catalogListContainer>.focus{color:#f36f21;}'
+                                        +'</style>'
+                mask.appendChild(listContainer);
+
+
+                var catalogHeader = document.createElement('div');
+                catalogHeader.style['borderBottom'] = '1px solid #eeeeee';
+                catalogHeader.style['display'] = 'block';
+                catalogHeader.style['height'] = itemHeight+'px';
+                catalogHeader.style['lineHeight'] = itemHeight+'px';
+                catalogHeader.style['backgroundPosition'] = 'center';
+                catalogHeader.style['backgroundSize'] = '80% auto';
+                catalogHeader.style['backgroundRepeat'] = 'no-repeat';
+                catalogHeader.style['backgroundImage'] = 'url("images/slogan_d.png")';
+                listContainer.appendChild(catalogHeader);
+
+                var catalogHomeItem = document.createElement('a');
+                // catalogHomeItem.className = 'home';
+                catalogHomeItem.href = 'index.html'+urlParam;
+                catalogHomeItem.style['borderBottom'] = '1px solid #eeeeee';
+                catalogHomeItem.style['display'] = 'block';
+                catalogHomeItem.style['height'] = itemHeight+'px';
+                catalogHomeItem.style['lineHeight'] = itemHeight+'px';
+                catalogHomeItem.innerHTML = 'Home';
+                catalogHomeItem.style['textIndent'] = Math.ceil(itemIndent/2)+'px';
+                listContainer.appendChild(catalogHomeItem);
+
+                var catalogAllGamesItem = document.createElement('a');
+                if(gameCatagory.toLowerCase()=='All Games'.toLowerCase()) catalogAllGamesItem.className = 'focus';
+                catalogAllGamesItem.href = 'index_all.html'+urlParam;
+                catalogAllGamesItem.style['borderBottom'] = '1px solid #eeeeee';
+                catalogAllGamesItem.style['display'] = 'block';
+                catalogAllGamesItem.style['height'] = itemHeight+'px';
+                catalogAllGamesItem.style['lineHeight'] = itemHeight+'px';
+                catalogAllGamesItem.innerHTML = 'All Games';
+                catalogAllGamesItem.style['textIndent'] = Math.ceil(itemIndent/2)+'px';
+                listContainer.appendChild(catalogAllGamesItem);
+
+                for(var i=0;i<me.catalogs.length;i++){
+                    var catalogItem = document.createElement('a');
+                    if(gameCatagory.toLowerCase() == me.catalogs[i].text.toLowerCase()){
+                        catalogItem.className = 'focus';    
+                    }
+                    catalogItem.style['borderBottom'] = '1px solid #eeeeee';
+                    catalogItem.style['display'] = 'block';
+                    catalogItem.style['height'] = itemHeight+'px';
+                    catalogItem.style['lineHeight'] = itemHeight+'px';
+                    catalogItem.style['textIndent'] = itemIndent+'px';
+                    catalogItem.href = 'index_'+me.catalogs[i].key+'.html'+urlParam;
+                    catalogItem.innerHTML = me.catalogs[i].text;
+                    listContainer.appendChild(catalogItem);
+                }
+                me.isInit = true;
+            }
+        }
+
+        var target = document.getElementById('game_list');
+
+        requestGameData(target, 100);
+
+        document.getElementById('load_more').onclick = function () {
+            // if ( !document.getElementById("page_" + page) ) {
+            //  var target = document.createElement('div');
+            //  document.getElementById('content').appendChild(target);
+            // } else {
+            //  var target = document.getElementById("page_" + page);
+            // }
+            window.scrollTo(0,0);
+            target.innerHTML = "<div style=\"text-align:center; width: 100%; line-height: 60px;\">loading...</div>";
+            requestGameData(target, 100);
+        }
+        talentGA.checkEnter();
+    </script>
+
+    <script type="text/javascript">
+        var onloadTemp = window.onload;
+        window.onload = function(){
+            if(onloadTemp) onloadTemp();
+            var head= document.getElementsByTagName('head')[0]; 
+            var addthis= document.createElement('script'); 
+            addthis.type= 'text/javascript'; 
+            addthis.src = "http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-53ca3e66454ec43f";
+
+            head.appendChild(addthis);
+        }
+    </script>
+</html>

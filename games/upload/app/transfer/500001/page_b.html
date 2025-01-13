@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <meta charset="UTF-8"><title>TALENT GAME BOX. The best casual games.</title><meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1"><meta name="keywords" content="game"><meta name="author" content="Leemissen"><meta name="copyright" content="TALENT"><meta name="application-name" content="TALENT GAME BOX"><meta name="description" content="TALENT GAME BOX. The best casual games."><meta property="og:title" content="TALENT GAME BOX"><meta property="og:type" content="game"><meta property="og:image" id="gameIcon" content="http://www.rayjump.com/images/talent_logo.png"><meta property="og:description" content="TALENT GAME BOX. The best casual games."><meta property="og:url" content="http://www.rayjump.com"><meta property="og:site_name" content="TALENT"><meta name="twitter:card" content="Game"><meta name="twitter:title" content="TALENT GAME BOX"><meta name="twitter:description" content="TALENT GAME BOX. The best casual games."><meta name="twitter:image" content="http://www.rayjump.com/images/talent_logo.png">
+        <style type="text/css">
+          #content{margin:0 auto;width:auto;padding:10px}#content .game{width:auto;padding:10px 0;border-bottom:1px solid rgba(0,0,0,.1);margin:0;margin-top:0;min-height:90px;height:auto;position:relative;padding-left:80px;width:100%;background:#fff;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;-webkit-border-radius:10px;-moz-border-radius:10px;border-radius:0}#content .game .game-logo{height:68px;width:68px;position:absolute;left:0;top:10px;border-radius:10px}#content img{border:0 none;max-width:100%;height:auto}#content .game .game-info{margin:0 0 0 10px;height:auto;padding:0;position:relative;font-size:12px;float:left;border:none;width:140px;padding-right:80px;background-color:none;width:100%;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}#content .game .game-info .btn-content{position:absolute;right:15px;top:0;margin-top:15px;height:30px;line-height:30px;width:60px}#content .game .game-info .btn-play{display:inline-block;float:left;position:relative;height:30px;line-height:30px;width:60px;border:2px solid #7eafe5;background-color:#7eafe5;color:#fff;font-size:16px;font-weight:600;text-align:center;border-radius:5px}h1{font-size:25px;text-align:center;line-height:45px;height:45px;margin-bottom:0;border-bottom:1px solid #ccc;color:#05F}body{margin: 0px;padding: 0px;}
+        </style>
+        <style type="text/css">
+            .bannerContainer{
+              display: block;
+              position: fixed;
+              bottom: 0px;
+              width: 100%;
+              height: 0px;
+              padding-top: 15.625%;
+              z-index: 999;
+            }
+            .banner{
+              position: absolute;
+              left:0px;
+              right: 0px;
+              top:0px;
+              bottom:0px;
+              background-image: url('banner.gif?dt=20151103');
+              background-size: contain;
+            }
+          </style>
+    </head>
+    <body>
+      <div class="bannerContainer">
+        <a id="desbanner" href="../index.html?appid=500001" target="_blank" class="banner"></a></div>
+      <h1>WELCOM TO TALENT GAME</h1><section id="content" class="clearfix"><a href="../index.html?appid=500001" target="_self"><div class="game clearfix"><div class="game-logo"><img src="../../../gamelist/500032/icon.jpg"></div><div class="game-info"><section><p class="title">Mini Race Rush</p><p class="des">22365 played</p></section><div class="clearfix btn-content"><div class="btn-play">PLAY</div></div></div></div></a> <a href="../index.html?appid=500002" target="_self"><div class="game clearfix"><div class="game-logo"><img src="../../../gamelist/500031/icon.jpg"></div><div class="game-info"><section><p class="title">Distant Orbit</p><p class="des">32625 played</p></section><div class="clearfix btn-content"><div class="btn-play">PLAY</div></div></div></div></a> <a href="../index.html?appid=500003" target="_self"><div class="game clearfix"><div class="game-logo"><img src="../../../gamelist/500030/icon.jpg"></div><div class="game-info"><section><p class="title">Teddy Bear Zombies</p><p class="des">25631 played</p></section><div class="clearfix btn-content"><div class="btn-play">PLAY</div></div></div></div></a> <a href="../index.html?appid=500004" target="_self"><div class="game clearfix"><div class="game-logo"><img src="../../../gamelist/500029/icon.jpg"></div><div class="game-info"><section><p class="title">Paper Plane Flight</p><p class="des">15631 played</p></section><div class="clearfix btn-content"><div class="btn-play">PLAY</div></div></div></div></a> <a href="../index.html?appid=500005" target="_self"><div class="game clearfix"><div class="game-logo"><img src="../../../gamelist/500028/icon.jpg"></div><div class="game-info"><section><p class="title">Street Ball Star</p><p class="des">15631 played</p></section><div class="clearfix btn-content"><div class="btn-play">PLAY</div></div></div></div></a></section></body>
+      
+    <script type="text/javascript">
+        function getQueryString(url, name) {
+            var spliter = '?';
+            if (url.indexOf(spliter) < 0) return null;
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+            var r = url.split(spliter)[1].match(reg);
+            if (r != null) return unescape(r[2]);
+            return null;
+        }
+
+
+
+        var site_id = getQueryString(window.location.href,'site_id') || 'noappid';
+        var sign = getQueryString(window.location.href,'s') || 'nosign';
+        var ht = getQueryString(window.location.href,'ht') || 'noname';
+        var traff = getQueryString(window.location.href,'traff') || 'notraffic';
+        var traffic_info = site_id+'_'+sign+'_'+ht+'_'+traff;
+
+        var GAId = 'UA-65952630-1';
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', GAId, 'auto');
+        ga('send', 'event', 'ad_traffic', 'traffic_page_500001', traffic_info);
+
+        var tempDate = new Date();
+        var dt = '&dt='+tempDate.getYear()+(tempDate.getMonth()+10)+(tempDate.getDate()+10);
+        document.getElementById('desbanner').href+=dt;
+    </script>
+</html>

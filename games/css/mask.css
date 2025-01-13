@@ -1,0 +1,245 @@
+.maskContainer {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	height: 100%;
+	z-index: 9999999;
+	display: flex;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+
+	-webkit-box-orient: vertical;
+	-moz-box-orient: vertical;
+	-ms-box-orient: vertical;
+	-o-box-orient: vertical;
+	box-orient: vertical;
+	-webkit-box-pack: end;
+	-moz-box-pack: end;
+	-ms-box-pack: end;
+	-o-box-pack: end;
+	box-pack: end;
+
+	-ms-flex-pack: end;
+	justify-content: center;
+	background: rgba(0,0,0,.7);
+}
+
+	.maskContent {
+		width: 100%;
+		padding: 15px 0px;
+		background: rgba(255,255,255,.9);
+		-webkit-box-shadow: 0px 2px 20px rgba(0,0,0,.85);
+		-moz-box-shadow: 0px 2px 20px rgba(0,0,0,.85);
+		box-shadow: 0px -5px 120px rgba(0,0,0,.85);
+		-webkit-border-radius: .8em;
+		-moz-border-radius: .8em;
+		-ms-border-radius: .8em;
+		-o-border-radius: .8em;
+		border-radius: 0px;
+	}
+
+	.maskContent>.share-custom{
+		width: 100%;
+		display: -webkit-box;
+		-webkit-box-pack: center;
+	}
+	.maskContent>.share-custom a{
+		margin: 10px !important;
+		float: none !important;
+	}
+	.maskContent>.share-custom.feed a{
+		margin: 15px !important;
+	}
+	.maskContent>.spliter{
+		width: 100%;
+		height: 2px;
+		border-color: #d8d8d8;
+		background-color: #d8d8d8;
+
+	}
+	.maskContent>h3{
+		width: 100%;
+		text-align: center;
+		padding: 15px 0px;
+		color: #767676;
+	}
+	.maskContent>.btn{
+		color:#1a78d9;
+		border-radius: 0px;
+		border-top: 3px solid #d8d8d8;
+	}
+
+	.maskContent{
+		position: relative;
+		-webkit-transition-property: all;
+		-webkit-transition-duration: 0.3s;
+		-webkit-transition-delay: 0.1s;
+		-webkit-transform: translate(0%,100%);
+
+
+		-moz-transition-property: all;
+		-moz-transition-duration: 0.3s;
+		-moz-transition-delay: 0.1s;
+		-moz-transform: translate(0%,100%);
+
+
+		-ms-transition-property: all;
+		-ms-transition-duration: 0.3s;
+		-ms-transition-delay: 0.1s;
+		-ms-transform: translate(0%,100%);
+
+
+		-o-transition-property: all;
+		-o-transition-duration: 0.3s;
+		-o-transition-delay: 0.1s;
+		-o-transform: translate(0%,100%);
+
+
+		transition-property: all;
+		transition-duration: 0.3s;
+		transition-delay: 0.1s;
+		transform: translate(0%,100%);
+	}
+	#maskMenu{
+		display: none;
+	}
+	#maskMenu.show{
+		display: block;
+	}
+	#maskMenu .maskContent.show {
+		-webkit-transform: translate(0px,0px);
+		-moz-transform: translate(0px,0px);
+		-ms-transform: translate(0px,0px);
+		-o-transform: translate(0px,0px);
+		transform: translate(0px,0px);
+	}
+
+
+
+.container {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	height: 100%;
+	z-index: 99999;
+	display: flex;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	background: rgba(0,0,0,.3);
+}
+
+	.content {
+		width: 400px;
+		padding: 15px;
+		background: rgba(255,255,255,.9);
+		-webkit-box-shadow: 0px 2px 20px rgba(0,0,0,.85);
+		-moz-box-shadow: 0px 2px 20px rgba(0,0,0,.85);
+		box-shadow: 0px 2px 20px rgba(0,0,0,.85);
+		-webkit-border-radius: .8em;
+		-moz-border-radius: .8em;
+		-ms-border-radius: .8em;
+		-o-border-radius: .8em;
+		border-radius: .8em;
+	}
+
+/* ============================= jiathis =========================== */
+
+
+.share-custom {
+	padding-bottom: 10px;
+}
+.share-custom:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+	overflow: hidden;
+}
+	.share-custom a {
+		float: left !important;
+		display: block !important;
+		margin: 5px !important;
+		padding: 0 !important;
+		width: 64px !important;
+		height: 64px !important;
+		background-color: #fff !important;
+		background-size: 104% 104% !important;
+		background-repeat: no-repeat !important;
+		background-position: center !important;
+		border-radius: 18px !important;
+		border: 1px solid rgba(0,0,0,.1) !important;
+		font-size: 0;
+	}
+	.share-custom a:hover {
+		opacity: .5;
+	}
+	.share-custom a span {
+		display: none !important;
+	}
+	
+	.addthis_sharing_toolbox> div{
+		display: none !important;
+	}
+
+	.btn {
+		display: block;
+		margin: 0 -15px -15px;
+		padding: 18px 0;
+		color: #007aff;
+		font-size: 1.3em;
+		text-align: center;
+		background: rgba(255,255,255,.5);
+		-webkit-border-bottom-right-radius: .8em;
+		-moz-border-bottom-right-radius: .8em;
+		border-bottom-right-radius: .8em;
+		-webkit-border-bottom-left-radius: .8em;
+		-moz-border-bottom-left-radius: .8em;
+		border-bottom-left-radius: .8em;
+	}
+
+.facebook {
+	background-image: url('./facebook.jpg') !important;
+}
+.twitter {
+	background-image: url('./twitter.jpg') !important;
+}
+.googleplus {
+	background-image: url('./googleplus.jpg') !important;
+}
+.pinterest {
+	background-image: url('./Pinterest.jpg') !important;
+}
+.delicious {
+	background-image: url('./Delicious.jpg') !important;
+}
+.buffer {
+	background-image: url('./buffer.jpg') !important;
+}
+.gmail {
+	background-image: url('./gmail.jpg') !important;
+}
+.tumblr {
+	background-image: url('./tumblr.jpg') !important;
+}
+
+#extBtn{
+	height: 22px;
+	width: auto;
+	position: absolute;
+	right: 10px;
+	top: 12px;
+}

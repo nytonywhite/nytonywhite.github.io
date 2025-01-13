@@ -1,0 +1,930 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Mobvista Wiki</title>
+		<link href="https://github.com/fluidicon.png" rel="shortcut icon">
+		<link rel="fluid-icon" href="https://github.com/fluidicon.png" title="wiki">
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
+		<meta name="keywords" content="game">
+		<meta name="author" content="Leemissen">
+		<meta name="copyright" content="Mobvista Wiki">
+		<meta name="application-name" content="Mobvista Wiki">
+		<meta name="description" content="Mobvista Wiki">
+		<meta property="og:title" content="Mobvista Wiki">
+		<meta property="og:type" content="game">
+		<meta property="og:image" id="gameIcon" content="http://www.rayjump.com/images/talent_logo.png">
+		<meta property="og:description" content="Mobvista Wiki">
+		<meta property="og:url" content="http://www.mobvista.com">
+		<meta property="og:site_name" content="Mobvista Wiki">
+		<meta name="twitter:card" content="Game">
+		<meta name="twitter:title" content="Mobvista Wiki">
+		<meta name="twitter:description" content="Mobvista Wiki">
+		<meta name="twitter:image" content="http://www.rayjump.com/images/talent_logo.png">
+
+		
+		<link href="css/icon.css" rel="stylesheet">
+		<!--Import materialize.css-->
+		<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+		<link type="text/css" rel="stylesheet" href="css/mermaid.css"  media="screen,projection"/>
+		<link type="text/css" rel="stylesheet" href="css/latex2html5.css"  media="screen,projection"/>
+		<link href="css/prism.css" rel="stylesheet" />
+		<link href="css/sweetalert.css" rel="stylesheet" />
+		<!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+
+		<!--Let browser know website is optimized for mobile-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	      <!--Import jQuery before materialize.js-->
+		<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+
+		<script type="text/javascript" src="js/sweetalert.js"></script>
+		<script type="text/javascript" src="js/materialize.min.js"></script>
+
+		<script type="text/javascript" src="js/showdown.js"></script>
+		<script type="text/javascript" src="js/mermaid.js"></script>
+		
+		<script type="text/javascript" src="js/latex2html5.min.js"></script>
+		<script src="js/prism.js"></script>
+		<script type="text/x-mathjax-config">
+
+		    MathJax.Hub.Config({ 
+		        TeX: {extensions: ["AMSmath.js", "AMSsymbols.js"]},     
+		        extensions: ["tex2jax.js"],
+		        jax: ["input/TeX", "output/HTML-CSS"],
+		        showProcessingMessages : false,
+		        messageStyle : "none" ,    
+		        showMathMenu: false ,
+		        tex2jax: {
+		            processEnvironments: true,
+		            inlineMath: [ ['$','$'] ],
+		            displayMath: [ ['$$','$$'], ["\[","\]"] ],
+		            preview : "none",
+		            processEscapes: true
+		        },
+		        "HTML-CSS": { linebreaks: { automatic:true, width: "latex-container"} }
+		    });
+
+		</script>
+		<!-- // <script type="text/javascript" src="js/MathJax.js?config=TeX-AMS_HTML"></script> -->
+		      
+		<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>  
+		<script>
+	        
+
+	        MathJax.Hub.Register.StartupHook("End",function () {
+
+		      $('.math').each(function (i, el) {
+		          var $el = $(el);
+		          var TEX = new LaTeX2HTML5.TeX({
+		              tagName: 'section',
+		              className: 'latex-container',
+		              latex: $el.text()
+		          });
+		          TEX.render();
+		          $el.replaceWith(TEX.$el);
+		      });
+		      
+		  });
+	    </script>
+		<style>
+			html {
+		      font-family: "Roboto", GillSans, Calibri, Trebuchet, sans-serif;
+		    }
+		    body{
+		    	padding-top: 64px;
+		    }
+			
+			h1 {
+			    font-size: 4.2rem;
+			}
+
+			h2 {
+			    font-size: 2.5rem;
+			}
+
+			h3 {
+			    font-size: 2rem;
+			}
+			h4{
+				font-size: 1.7rem;
+			}
+			th,td{
+				word-wrap: break-word;
+			    word-break: break-all;
+			    max-width: 400px;
+			}
+		    code{
+		    	background-color: #ddd;
+		    	padding: 15px;
+		    	display: block;
+
+		    	word-break:break-all; 
+				word-wrap:break-word;
+				white-space: pre-wrap; 
+
+		    }
+
+		    .language-comment{
+				display: none;
+		    }
+
+		    #markdownContent input[type=checkbox]{
+		    	display: inline-block;
+		    	position: relative;
+		    	left: 0;
+		    	opacity: 1;
+		    	margin-left: 0 !important;
+		    }
+	
+		    #markdownContent table{
+			    border-collapse: separate;
+    			border-spacing: 3;
+			}
+			#markdownContent table thead,
+			#markdownContent table tr.even, 
+			#markdownContent table tr.alt, 
+			#markdownContent table tr:nth-of-type(even){
+			    background: #F9F9F9;
+			}
+		
+			#markdownContent strong{
+				font-weight: bolder !important;
+    			font-family: arial;
+			}
+			#markdownContent>h2{
+				padding-top: 15px;
+			}
+			#markdownContent>h3{
+				padding-top: 10px;
+			}
+
+			#markdownContent ul{
+				padding-left: 40px;
+			}
+
+			.row{
+				overflow-x:hidden; 
+			}
+		    nav{
+				position: fixed;
+				top:0;
+				z-index: 1000;
+			}
+			.brand-logo{
+				text-indent: 20px;
+			}
+			#listBtn{
+				display: none;
+			}
+			 #rightBtn {
+            	display: none;
+       		 }
+
+			#lnav.navLeftPanel{
+				height: 100%;
+				height: calc(100% - 64px);
+				position: fixed;
+				overflow-y: auto;
+				display: block;
+				margin: 0;
+				padding: 0;
+				z-index: 900;
+			}
+			#lnav.navLeftPanel:hover{
+				/*overflow-y: auto;*/
+			}
+			
+
+			#lnav li {
+			    height: 50px;
+			    line-height: 50px;
+			    /*background-color: rgba(0, 0, 0, 0.15);*/
+			    border-bottom: solid 1px #555;
+			    padding: 0 10px;
+			    color: white;
+			    transition: 0.2s;
+			    width:100%;
+			}
+			#lnav li a{
+				color: white;
+				height: 50px;
+			    line-height: 50px;
+			    color: white;
+			    display: inline-block;
+			    width: 100%;
+			}
+			li.focus{
+				border-left: solid 6px #0277bd ;
+			}
+			li.sub{
+				display: none;
+			}
+			li.sub.show{
+				display: block;
+				background-color: #37474f;
+				animation: fadeIn 0.2s;
+				-webkit-animation: fadeIn 0.2s;
+			}
+			li.sub>a{
+				text-indent: 10px;
+				/*color:#888;*/
+			}
+				
+			#markdownContent.container{
+				box-sizing: content-box;
+				margin-top: 20px;
+				padding-top: 1px;
+				padding-bottom: 10px;
+				padding-left: 4%;
+				padding-right: 4%;
+				box-shadow: 0 0 5px #555;
+			}
+			.rightBtnGroup{
+            position: absolute;
+            right: 60px;
+        } 
+        .rightBtnGroup dl, .rightBtnGroup dd{
+            margin: 0;
+            text-align: center;
+            box-sizing: border-box;
+            cursor: pointer;
+        }
+        .rightBtnGroup dl{
+            display: none;
+        }
+        .rightBtnGroup dl.show{
+            display: block;
+            animation: fadeIn 0.3s;
+            -webkit-animation: fadeIn 0.3s;
+        }
+        .rightBtnGroup li span{
+            display: inline-block;
+		    padding: 0 8px;
+		    min-width: 70px;
+		    text-align: center;
+        }
+        .rightBtnGroup li:hover{
+            background-color: #607d8b;
+        }
+        .rightBtnGroup dd:hover{
+          background-color: #546e7a;
+        }
+
+
+
+			@media only screen and (max-width: 600px){
+				#lnav.navLeftPanel{
+					height: auto;
+					position: fixed;
+					/*overflow-y: auto;*/
+					top: 56px;
+					display: none;
+					max-height: 90%;
+					overflow-y: scroll;
+					/*overflow: visible;*/
+				}
+				#lnav.navLeftPanel::-webkit-scrollbar{
+					width: 0px;
+				}
+				#lnav li{
+					padding: 0 25px;
+				}
+				#listBtn{
+					position: absolute;
+					left: 10px;
+				    color: #fff;
+				    display: inline-block;
+				    padding: 0;
+				}
+				#markdownContent.container{
+					box-shadow: none;
+				}
+				#lnav.navLeftPanel.show{
+					display: block;
+					animation: bounceInDown 0.6s;
+					-webkit-animation: bounceInDown 0.6s;	/* Safari 和 Chrome */
+				}	
+
+				#rightBtn {
+                position: absolute;
+                right: 5px;
+                color: #fff;
+                display: inline-block;
+                padding: 0;
+            }
+            .rightBtnGroup{
+                right: 0px;
+                top: 54px;
+                background-color: #263238;
+                width: 100%;
+                display: none;
+            }
+            .rightBtnGroup.show {
+                display: block;
+                animation: bounceInDown 0.6s;
+                -webkit-animation: bounceInDown 0.6s; /* Safari 和 Chrome */
+            }
+
+            .rightBtnGroup li{
+                float: none;
+                width: 100%;
+                height: 50px;
+                padding: 0 20px;
+                /*text-align: right;*/
+                border-bottom: solid 1px #555;
+            }
+            .rightBtnGroup dl{
+                display: inline-block;
+            }
+            .rightBtnGroup li span{
+                width: 33%;
+                height: 50px;
+                text-align: left;
+            }
+            .rightBtnGroup dd{
+                display: inline-block;
+                width: 70px;
+                height: 50px;
+                
+            }
+            .rightBtnGroup dl.show{
+                display: inline;
+                animation: fadeIn 0.3s;
+                -webkit-animation: fadeIn 0.3s;
+            }
+            .rightBtnGroup li:hover{
+               background-color: #263238;
+            }
+			}
+
+/* fallback */
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Material Icons'), local('MaterialIcons-Regular'), url(fonts/2fcrYFNaTjcS6g4U3t-Y5ZjZjT5FdEJ140U2DJYC3mY.woff2) format('woff2');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+			
+
+			@-webkit-keyframes bounceInDown {
+			  from, 60%, 75%, 90%, to {
+			    -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+			    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+			  }
+
+			  0% {
+			    opacity: 0;
+			    -webkit-transform: translate3d(0, -3000px, 0);
+			    transform: translate3d(0, -3000px, 0);
+			  }
+
+			  60% {
+			    opacity: 1;
+			    -webkit-transform: translate3d(0, 25px, 0);
+			    transform: translate3d(0, 25px, 0);
+			  }
+
+			  75% {
+			    -webkit-transform: translate3d(0, -10px, 0);
+			    transform: translate3d(0, -10px, 0);
+			  }
+
+			  90% {
+			    -webkit-transform: translate3d(0, 5px, 0);
+			    transform: translate3d(0, 5px, 0);
+			  }
+
+			  to {
+			    -webkit-transform: none;
+			    transform: none;
+			  }
+			}
+
+			@keyframes bounceInDown {
+			  from, 60%, 75%, 90%, to {
+			    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+			    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+			  }
+
+			  0% {
+			    opacity: 0;
+			    transform: translate3d(0, -3000px, 0);
+			    transform: translate3d(0, -3000px, 0);
+			  }
+
+			  60% {
+			    opacity: 1;
+			    transform: translate3d(0, 25px, 0);
+			    transform: translate3d(0, 25px, 0);
+			  }
+
+			  75% {
+			    transform: translate3d(0, -10px, 0);
+			    transform: translate3d(0, -10px, 0);
+			  }
+
+			  90% {
+			    transform: translate3d(0, 5px, 0);
+			    transform: translate3d(0, 5px, 0);
+			  }
+
+			  to {
+			    transform: none;
+			    transform: none;
+			  }
+			}
+
+			@keyframes fadeIn {
+			  from {
+			    opacity: 0;
+			  }
+
+			  to {
+			    opacity: 1;
+			  }
+			}
+
+
+		/* 设置滚动条的样式 */
+		::-webkit-scrollbar {
+		    width: 10px;
+		    height: 10px;
+		    /*background-size: blue;*/
+		}
+		::-webkit-scrollbar-track {
+		  background-color: #b0bec5;
+		} /* 滚动条的滑轨背景颜色 */
+
+		::-webkit-scrollbar-thumb {
+			  background-color: rgba(0, 0, 0, 0.2); 
+		} /* 滑块颜色 */
+
+		::-webkit-scrollbar-button {
+			  /*background-color: #78909c;*/
+		} /* 滑轨两头的监听按钮颜色 */
+
+		::-webkit-scrollbar-corner {
+			  background-color: black;
+		} /* 横向滚动条和纵向滚动条相交处尖角的颜色 */
+
+		.progress{
+			width: 53%;
+			margin: 23% auto;
+		}
+
+		</style>
+	</head>
+
+	<body>
+		
+		  <nav id="topheader">
+		    <div class="nav-wrapper teal lighten-2">
+		      <a href="#" class="brand-logo">Mobvista Wikipedia</a>
+		      <i id="listBtn" class="material-icons">list</i>
+		      	  <i id="rightBtn" class="material-icons">translate</i>
+
+        <!-- Dropdown Trigger -->
+        <ul class='rightBtnGroup'>
+            <li id="language-List" warptype="language">
+                <span>Language</span>
+                <dl>
+                    <dd>lan1</dd>
+                    <dd>lan2</dd>
+                    <dd>lan3</dd>
+                </dl>
+                
+            </li>
+            <li id="platform-List" warptype="platform">
+                <span>Platform</span>
+                <dl>
+                    <dd>plat1</dd>
+                    <dd>plat2</dd>
+                    <dd>plat3</dd>
+                </dl>
+                
+            </li>
+        </ul>
+       <!--  <div >
+        	<a id="language" class="title" warptype="language" href='#'>Language</a>
+			<a id="platform" class="title" warptype="platform" href='#'>platform</a>  -->
+
+			<!-- Dropdown Structure -->
+		<!-- 	<ul id='language-List' class='btnContent blue-grey'>
+			    <li><a href="#!">one</a></li>
+			    <li><a href="#!">two</a></li>
+			    <li class="divider"></li>
+			    <li><a href="#!">three</a></li>
+			</ul>
+			<ul id='platform-List' class='btnContent blue-grey'>
+			    <li><a href="#!">1111</a></li>
+			    <li><a href="#!">two</a></li>
+			    <li class="divider"></li>
+			    <li><a href="#!">three</a></li>
+			</ul>
+        </div> -->
+		 
+		      
+		    </div>
+		  </nav>
+
+			<div class="row">
+			    <!-- Grey navigation panel -->
+		    	<ul id="lnav" class="navLeftPanel blue-grey darken-4 col s12 m3 l2">
+					<!-- <li class="head2"><a href="#">bbb</a></li>
+					<li class="flat-text"><a href="#">ccc</a></li>
+					<li class="flat-text"><a href="#">ddd</a></li>
+					<li class="flat-text"><a href="#">eee</a></li> -->
+		    	</ul>
+					
+
+			    <div class="col s12 m9 l10 offset-m3 offset-l2">
+			    <!-- Teal page content -->
+			    	<div id="markdownContent">
+			    		<div class="progress">
+					       <div class="indeterminate"></div>
+					  	</div>
+					</div>
+					
+					        
+			    </div>
+
+			</div>
+		
+		
+	</body>
+		<script type="text/javascript">
+		//try to use compareDocumentPosition to check dom's position
+
+		// console.log('loadMD');
+
+		// mermaidAPI.initialize({
+	 //        startOnLoad:false
+	 //    });
+	 	
+	 	
+	    var LANGUAGE = {'中文':'cn','ENG':'en'};
+	    var PLATFORM = {'IOS':'ios','Android':'android'};
+
+	    var DEFAULT_LAN,DEFAULT_PLAT,FILE_NAME;
+	    DEFAULT_LAN = 'cn';
+	 	DEFAULT_PLAT = 'ios';
+	 	FILE_NAME = 'index';
+	 	var FILE_PATH;
+
+	 	
+	    
+
+	 	$(window).on('popstate',function(){
+	 		var fileParth = getQueryString('file')||FILE_PATH;
+			initWiki(fileParth,true);
+	 	});
+
+		$(document).ready(function(){
+			var fileParth = getQueryString('file')||FILE_PATH;
+			initWiki(fileParth);
+		});
+
+
+
+		function initWiki(fileParth,isUpdate){
+			fileParth = fileParth||'';
+			if(fileParth=='sdk_intergrade_doc_cn_android.md'){ 
+				window.location.href = 'http://cdn-adn.rayjump.com/cdn-adn/markdown/index.html?file=sdk_document_android_english'
+			}
+
+	 		var PATHS = fileParth.split('_');
+	 		if(PATHS.length>=3){
+		    	DEFAULT_LAN = PATHS[PATHS.length-2];
+		 		DEFAULT_PLAT = PATHS[PATHS.length-1].split('.')[0];
+	 			FILE_NAME = PATHS.splice(0,PATHS.length-2).join('_');
+		    }
+		 	
+		 	
+		    
+		    FILE_PATH = FILE_NAME+'_'+DEFAULT_LAN+"_"+  DEFAULT_PLAT+".md";
+
+
+			initNavBtn(isUpdate!=true);
+			updateNavBtn();
+
+			getFile(FILE_PATH,function(content){
+				var option = {
+					'tables': true,
+					'tablesHeaderId':true,
+					'ghCodeBlocks':true,
+					'tasklists':true,
+					'strikethrough':true
+				}
+				var converter = new showdown.Converter(option),
+			    text      = content,
+			    html      = converter.makeHtml(text);
+			    // console.log(content)
+			    $(markdownContent).addClass('container');
+				document.getElementById('markdownContent').innerHTML = html;
+				initSideBar(isUpdate!=true);
+				Prism.highlightAll();
+
+				// $("code.language-chart").addClass('mermaid');
+
+				restEndCode();
+				initChart();
+
+				if(isUpdate){
+					var pustUrl = "index.html?file=" + FILE_PATH;
+					var wikiState = {'title':'Mobvista Wikipedia','url':pustUrl};
+					history.pushState(wikiState, wikiState.title, pustUrl);
+				}
+
+				(function(i, s, o, g, r, a, m) {
+					i['GoogleAnalyticsObject'] = r;
+					i[r] = i[r] || function() {
+						(i[r].q = i[r].q || []).push(arguments)
+					}, i[r].l = 1 * new Date();
+					a = s.createElement(o),
+						m = s.getElementsByTagName(o)[0];
+					a.async = 1;
+					a.src = g;
+					m.parentNode.insertBefore(a, m)
+				})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+				ga('create', 'UA-62639739-1', 'auto');
+				ga('send', 'pageview');
+				ga('send', 'event', 'mv_markdown', FILE_PATH);
+			});
+		}
+
+		function updateNavBtn(){
+			var lanList = $('#language-List dl');
+        	var platUL = $('#platform-List dl');
+
+			lanList.html(' ');
+        	platUL.html(' ');
+
+        	$.each(LANGUAGE, function(key,val){
+        	if(val == DEFAULT_LAN){
+        		$('#language-List span').html(key);
+        	}else{
+        		lanList.append("<dd>" + key + "</dd>");
+	        	}
+	            
+	        });
+	        $.each(PLATFORM, function(key, val){
+	        	if(val == DEFAULT_PLAT){
+	        		$('#platform-List span').html(key);
+	        	}else{
+	        		 platUL.append("<dd>" + key + "</dd>");
+	        	}
+	           
+	        });
+		}
+		function initNavBtn(){
+    	
+    	$('.rightBtnGroup')[0].innerHTML =
+    	'<li id="language-List" warptype="language"><span>Language</span><dl></dl></li>'+
+		'<li id="platform-List" warptype="platform"><span>Platform</span><dl></dl></li>';
+
+
+
+    	var lanList = $('#language-List dl');
+        var platUL = $('#platform-List dl');
+        var rightBtn = $('#rightBtn');
+        rightBtn.unbind('click');
+        $('.rightBtnGroup').unbind('click');
+
+    	$('.rightBtnGroup li').hover(function(){
+    		var type = $(this).attr('warptype');
+            // $('.rightBtnGroup').find('#' + type + '-List').toggleClass('show');
+            $(this).find('dl').toggleClass('show z-depth-1');
+    	});
+        $(rightBtn).on('click', function (e) {
+            $('.rightBtnGroup').toggleClass('show');
+        });
+        $('.rightBtnGroup').on('click', 'dd', function (e) {
+        	$('.rightBtnGroup').removeClass('show');
+           var key = $(this).text();
+           DEFAULT_LAN = LANGUAGE[key]? LANGUAGE[key]:DEFAULT_LAN;
+           DEFAULT_PLAT = PLATFORM[key]? PLATFORM[key]:DEFAULT_PLAT;
+           FILE_PATH = FILE_NAME+'_'+DEFAULT_LAN+"_"+  DEFAULT_PLAT+".md";
+           // alert(FILE_PATH);
+           initWiki(FILE_PATH,true);
+           // window.location.href = "index.html?file="+FILE_PATH;
+
+
+        });
+
+    	
+    }
+
+		function restEndCode(){
+			var markdownCodes = $('code.language-markdown');
+			markdownCodes.each(function(i,ele){
+				var mCode = markdownCodes[i];
+				mCode.innerHTML = mCode.innerHTML.replace(' ```','```');
+			})
+		}
+
+		function initChart(){
+			
+			$("code.language-chart").addClass('mermaid');
+        	var mermaidConfig = {
+            startOnLoad:true,
+            sequenceDiagram:{
+                    useMaxWidth:false
+            },
+            flowchart:{
+                    useMaxWidth:false,
+                    htmlLabels:true
+            },
+            gantt:{
+                    useMaxWidth:false,
+            },
+            callback:function(id){
+                console.log(id,' rendered');
+            },
+            logLevel:5
+	        };
+	       mermaid.init(mermaidConfig, $(".mermaid"));
+	       // mermaid.initialize(mermaidConfig);
+
+			
+		}
+
+		function initChart2(){
+			var chartEls = $("code.language-chart");
+			var ids = 0;
+			var charts = [];
+			chartEls.each(function(i){
+				chartEls[i].id = 'mermaid_chart'+(++ids);
+				charts.push(chartEls[i]);
+			});
+
+			console.log(charts)
+
+			 var callback = function(html){
+		        if(charts.length==0) return;
+		        var chart = charts.pop();
+		        var graphDefinition = chart.innerHTML;
+		    	console.log(chart.id)
+		        mermaidAPI.render(chart.id,graphDefinition,callback);
+		    };
+
+		    var tempChart = charts.pop();
+		    var tempChart = charts.pop();
+		    var tempGraphDefinition = tempChart.innerHTML;
+		    mermaidAPI.render(tempChart.id,tempGraphDefinition,callback,tempChart);
+		}
+
+		function getFile(url,callback){
+
+			document.getElementById('markdownContent').innerHTML = '<div class="progress"><div class="indeterminate"></div></div>';
+
+			var lnav = $('#lnav');
+			lnav.html(' ');
+			var ts = new Date().getTime();
+			$.ajax({
+				url: url+'?ts=1',
+	            type: "GET",
+	            dataType: "html",
+	            contentType:'html',
+	            timeout: 100000,
+	            error: function(result) {
+	            	sweetAlert("Oops...", "File is not Exist!", "error");
+	            	document.getElementById('markdownContent').innerHTML = '<h1 style="text-align:center;">File is not Exist!</h1>';
+	                // alert('Error loading XML document'+xml);
+	            },
+	            success:function(result){
+
+	            	if(callback) callback(result);
+
+
+	            }
+			})
+		}
+
+		function initSideBar(isFirstInit){
+			var content = $('#markdownContent');
+			var lnav = $('#lnav');
+			lnav.html(' ');
+
+			var headdingKey = 'headdingitem'
+			var headdingIdCounter = 1;
+			var headdingObjArray = getSortHeading(content);
+			// console.log(headdingObjArray)
+			var lastH2Class = '';
+			for(var i=0,iMax=headdingObjArray.length;i<iMax;i++){
+				var headding = headdingObjArray[i].el;
+				// if(headding.nodeName.toUpperCase()=='H1'){
+				// 	lnav.append('<li class="flat-text-header"><a href="#'+headding.id+'" >'+headding.innerHTML+'</a></li>');
+				// }else 
+
+				var headdingid;
+				if(headding.id){
+					headdingid = headding.id;
+				}else{
+					headdingid = headdingKey+(headdingIdCounter++);
+					headding.id = headdingid;
+				}
+				if(headding.nodeName.toUpperCase()=='H2'){
+					var lastH2Class = headdingid+'warp';
+					lnav.append('<li class="head2 truncate  waves-effect waves-teal" warptype="'+lastH2Class+'"><a href="#'+headdingid+'" >'+headding.innerText+'</a></li>');
+				}else{
+					lnav.append('<li class="sub truncate '+lastH2Class+' waves-effect waves-light"><a href="#'+headdingid+'" >'+headding.innerText+'</a></li>');
+				}
+			}
+
+			if(isFirstInit==true){
+				$(lnav).on('click','li.head2',function(e){
+					var lastH2Class = $(this).attr('warptype');
+					$(lnav).find('.'+lastH2Class).toggleClass('show');
+				});
+
+
+				$(lnav).on('click','li',function(e){
+					$(lnav).find('li').removeClass('focus');
+					$(this).addClass('focus');
+				});
+				$(lnav).on('click','li.sub',function(e){
+					$(lnav).toggleClass('show z-depth-1');
+				});
+				$(listBtn).on('click',function(e){
+					$(lnav).toggleClass('show z-depth-1');
+				});
+				$(markdownContent).on('click',function(e){
+					$(lnav).removeClass('show z-depth-1');
+					$('.rightBtnGroup').removeClass('show');
+				});
+			}
+
+			var topheaderHeight = $('#topheader').height();
+			$('#lnav li.sub a,#lnav li.head2 a').click(
+                function(event) {
+                	var href = $(this).attr('href');
+					var finalTop = $(href).length>0 ? $(href).offset().top-topheaderHeight : 0;
+                    event.preventDefault();
+                    $('body, html').animate({
+                        scrollTop: finalTop
+                    }, 700);
+                }
+            );
+			// console.log(headdingArray)
+			// var header = content.find('h1');
+			// if(header.length>0) lnav.append('<li class="flat-text-header"><a href="#'+header[0].id+'" >'+header[0].innerHTML+'</a></li>');
+
+			// var subHeader = content.find('h3');
+			// for(var i=0,iMax=subHeader.length;i<iMax;i++){
+			// 	lnav.append('<li class="flat-text"><a href="#'+subHeader[i].id+'" >'+subHeader[i].innerHTML+'</a></li>');
+			// }
+		}
+
+		function getQueryString(key) {
+			try{
+				var reg = new RegExp("(^|&)" + key + "=([^&]*)(&|$)", "i");
+				var r = window.location.search.substr(1).match(reg);
+				if (r != null) return unescape(r[2]);
+			}catch(e){
+				return null;
+			}
+			return null;
+		}
+
+
+		function getSortHeading(content){
+			var headdingArray = content.parent().find('#markdownContent>h1,#markdownContent>h2,#markdownContent>h3');
+			var haddingObjArray = [];
+			for(var i=0,iMax=headdingArray.length;i<iMax;i++){
+				haddingObjArray.push({
+					index:i,
+					el:headdingArray[i]
+				});
+			}
+
+			return haddingObjArray;
+			return haddingObjArray.sort(function(domA,domB){
+				var result = domA.el.compareDocumentPosition(domB.el);
+				if(result==4||result==16) return false;
+				if(result==2||result==8) return true;
+				return true;
+			});
+		}
+		</script>
+
+		
+
+</html>

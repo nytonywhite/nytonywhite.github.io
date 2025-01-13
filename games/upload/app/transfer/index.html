@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang=en>
+	<head>
+    	<meta charset="utf-8">
+    	<script type="text/javascript">
+    		function getQueryString(url, name) {
+	            var spliter = '?';
+	            if (url.indexOf(spliter) < 0) return null;
+	            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+	            var r = url.split(spliter)[1].match(reg);
+	            if (r != null) return unescape(r[2]);
+	            return null;
+	        }
+
+	        var appMap = {
+	        	'500001':'../apph5wall/index.html',
+	        	// '500001':'../lp/traffic_lp.html',
+	        	'500002':'../../gamelist/600002/index.html',
+	        	'500003':'../game/index.html?gameid=500073',
+	        	'500004':'../../gamelist/600004/index.html',
+	        	'500005':'../game/index.html?gameid=49',
+	        	'500006':'../../gamelist/600006/index.html',
+	        	'500007':'../game/index.html?gameid=500080',
+	        	'500008':'../../gamelist/600008/index.html',
+	        	'500009':'../game/index.html?gameid=500076',
+	        	'500010':'../../gamelist/600010/index.html',
+	        	'500011':'../../gamelist/600011/index.html',
+	        	'500012':'../../gamelist/600012/index.html',
+	        	'500013':'../../gamelist/600013/index.html',
+	        	'500014':'../../gamelist/600014/index.html',
+	        	'500015':'../../gamelist/600015/index.html',
+	        	'500016':'../../gamelist/600016/index.html',
+	        	'400001':'http://6170d.safereliableads.com/',
+	        	'400002':'http://05mib.safereliableads.com/',
+	        	'400003':'http://7vpf.safereliableads.com/',
+	        	'400004':'http://qxko.safereliableads.com/',
+	        	'400005':'https://monetization.global/c/4c81761c-b3b0-11e5-b565-02f6361de079',
+	        };
+	        var lpState = {'title':'TALENT AD Plathom','url':'../apph5wall/index.html'};
+	        var lpPushState = history.pushState ? 
+		function(state,title,url){history.pushState(state,title,url)}:function(){};
+
+	        var site_id = getQueryString(window.location.href,'site_id') || '17019';
+	        var sign = getQueryString(window.location.href,'s') || '668d571bff3dc16a26ad81642c64504d';
+	        var ht = getQueryString(window.location.href,'ht') || 'noname';
+	        var traff = getQueryString(window.location.href,'traff') || 'default';
+	        var appid = getQueryString(window.location.href,'appid') || '500001';
+	        var finalUrl = (appMap[appid]||appMap['500001']);
+			lpPushState(lpState, lpState.title, "../apph5wall/index.html");
+	        if(appid.indexOf('400')==0){window.location.href = finalUrl;}else{
+	        finalUrl = finalUrl.indexOf('?')>0 ? finalUrl+'&' : finalUrl+'?'; 
+		        window.location.href = finalUrl
+		        	+'appId='+site_id
+		        	+'&s='+sign
+		        	+'&ht='+ht
+		        	+'&traff='+traff;
+	        }
+    	</script>
+	</head>
+</html>

@@ -1,0 +1,15 @@
+/****************************************************************************
+ *						公共样式(main.css)
+ * 公共样式所做的事情是满足业务的设计需求，同时是bootstrap的补充
+ *
+ * 	1. 公共样式的命名空间采用：adpope
+ *	2. 样式的规范采用：bootstrap的规范(http:codeguide.bootcss.com/)
+ *  3. bootstrap作为主体样式，main.css主要对其进行完善，满足业务效果需要
+ *  4. 对常用的组件样式进行封装，如图形组件，表格组件，时间控件等等
+ *
+ * 参考的文档：
+ * file:///D:/wamp/www/docs/source_code/themeforest-10814250-kode-responsive-admin-dashboard-template-/HTML/form-elements.html
+ * @date 2015-07-16
+ ****************************************************************************/
+
+@import url('scss/dog_style.css');

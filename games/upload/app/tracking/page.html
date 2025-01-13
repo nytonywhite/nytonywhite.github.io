@@ -1,0 +1,34 @@
+<html>
+	
+	<body style="display:table;height: 100%;width: 100%;">
+		<div style="display: table-cell;text-align: center;vertical-align: middle;">
+			<h3 id="trackingurl">
+				Loading ...
+			</h3>
+
+			<div id="iframeContainer">
+			</div>
+			<hr>
+			<iframe id="trackingframe" src="index.html" frameborder="0"></iframe>
+			<hr>	
+		</div>
+		
+
+	</body>
+	<script type="text/javascript">
+		function makeUrl(tracktype,param){
+			var localUrl = "index.html?tracktype="+tracktype+'&';
+			var destUrl = "http://www.rayjump.com/upload/app/tracking/"+localUrl;
+			var paramString = JSON.stringify(param);
+			var paramUrl = 'param='+encodeURIComponent(encodeURIComponent(paramString))
+			var finalUrl = destUrl+paramUrl;
+			var iframeString = "<iframe src='"+finalUrl+"' style='position:absolute;left:-1px;top:-1px;z-index:0;opacity:0.001;width:1px;height:1px;' frameborder='0'></iframe>";
+			console.log(finalUrl);
+			// document.body.innerHTML = finalUrl;
+			document.getElementById('trackingurl').innerText = finalUrl;
+			document.getElementById('trackingframe').src = localUrl+paramUrl;
+			document.getElementById('iframeContainer').innerText = iframeString;
+			return finalUrl;
+		}
+	</script>
+</html>

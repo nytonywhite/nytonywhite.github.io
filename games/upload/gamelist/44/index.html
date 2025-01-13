@@ -1,0 +1,113 @@
+
+<!DOCTYPE html> 
+<html>
+<!-- <html manifest="manifest.mf"> -->
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Soccer Mover</title>
+    <!-- for Google -->
+    <meta name="keywords" content="game, puzzle, football" />
+    <meta name="author" content="Leemissen" />
+    <meta name="copyright" content="TALENT" />
+    <meta name="application-name" content="TALENT GAME BOX" />
+    <meta name="description" content="game, puzzle, football">
+
+
+
+    <!-- for Facebook -->  
+    <meta property="og:title" content="TALENT GAME BOX" />
+    <meta property="og:type" content="game" />
+    <meta property="og:image" id="gameIcon" content="http://www.rayjump.com/images/talent_logo.png" />
+    <meta property="og:description" content="TALENT GAME BOX. The best casual games." /> 
+    <meta property="og:url" content="http://www.rayjump.com">
+    <meta property="og:site_name" content="TALENT">
+
+    
+<!-- for Twitter -->          
+    <meta name="twitter:card" content="Game" />
+    <meta name="twitter:title" content="TALENT GAME BOX" />
+    <meta name="twitter:description" content="TALENT GAME BOX. The best casual games." />
+    <meta name="twitter:image" content="http://www.rayjump.com/images/talent_logo.png" /> 
+
+    <!-- Define the viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0, target-densitydpi=device-dpi">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+<script type="text/javascript">
+    talentGameInfo = {
+        'name':'Soccer Mover',
+        'catalog':'Puzzle',
+        'description':"Soccer Mover is a classic physics-based sports game. Get the soccer ball into the goal by removing obstacles out of the way. GOOOOOOOAAAAAAAAAAAAL!",
+        'banner':'brick.jpg'
+    };
+
+</script>
+  <script id="talentInit" fraimId="canvas" type="text/javascript" src="../../../js/talentInit.js?v=2017032701"></script>
+
+    <style>
+        * {
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+
+        html {
+            overflow: hidden;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            background-color: #333333;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        #gamediv {
+            margin: 0;
+            padding: 0;
+            height: 960px;
+            min-height:  960px;
+            width: 100%;
+            display: block;
+        }
+
+        #canvas {
+            background-color: #64B5DF;
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -172px;
+            margin-left: -160px;
+            z-index: 1;
+        }
+    </style>
+    <script type="text/javascript" src="./js/game.js"></script>
+    <script type="text/javascript" src="./js/game.min.js"></script>
+    
+</head>
+
+<body onload="MyGame.init()" ryt12819="1">
+
+<script type="text/javascript">
+    function dp_submitScore(a, b) {
+        window.__score__ = {
+            level: b
+        }
+        if ( window.Android&&window.Android.showShare ) {
+            window.Android.showShare(JSON.stringify(__score__));
+        } else {
+            window.P.showShare(__score__);
+        }
+    }   
+</script>
+
+<div id="gamediv" style="height: 946px;"></div>
+    <canvas id="canvas" width="100%" height="946" style="-webkit-transform: scale(1, 1); margin-top: 0px; margin-left: 0px; left: 577px; top: 0px;width:100%;"></canvas>
+
+</body></html>

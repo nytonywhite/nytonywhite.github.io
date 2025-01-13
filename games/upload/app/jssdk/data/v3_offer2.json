@@ -1,0 +1,37 @@
+{
+	"status": 1,
+	"msg": "success",
+	"data": {
+		"session_id": "577e0073ac593ef2768b7c9a",
+		"parent_session_id": "577e0073ac593ef2768b7c9b",
+		"ad_type": 215,
+		"template": 0,
+		"unit_size": "0x0",
+		"html_url": "",
+		"ads": [{
+			"id": 87287978,
+			"title": "\u672b\u65e5\u4e4b\u5b50\uff1a\u555f\u7a0b",
+			"desc": "\u7a81\u7834100\u842c\u6b21\u4e0b\u8f09\uff01\u5f97\u734e\u5718\u968a\u5168\u65b0\u6253\u9020\uff0c\u570b\u7522\u624b\u904a\u518d\u9032\u5316\uff0cLive 2D\u6280\u8853\u4eab\u53d7\u5168\u65b0\u52d5\u611f\u9ad4\u9a57\uff01\u5b8c\u6574\u5287\u60c5\u5f77\u5f7f\u7f6e\u8eab\u5176\u4e2d\uff0c\u8c6a\u83ef\u8072\u512a\u9663\u5bb9\u76e1\u4eab\u807d\u89ba\u76db\u5bb4\uff0c\u5168\u65b0D.D.E\u6230\u9b25\u7cfb\u7d71\u6311\u6230\u4f60\u7684\u53cd\u61c9\u795e\u7d93\uff01",
+			"package_name": "com.hagame.cod1",
+			"icon_url": "http:\/\/res.rayjump.com\/common\/2016\/07\/01\/19\/35\/d41d8cd98f00b204e9800998ecf8427e_201607011935081467372908372_128X128.png",
+			"image_url": "",
+			"image_size": "128x128",
+			"impression_url": "http:\/\/us.rayjump.com\/impression?k=577e0073ac593ef276b7c9ce&p=NTczMXwyNTExOXwxMDExfDI1Nnw4NzI4Nzk3OHwwfG9wZW5hcGl8dW5rbm93bnwxMjh4MTI4fDd8QW5kcm9pZHw2LjB8anNfMS4wLjB8fHwwfEhLfHx1bmtub3dufHxhZF9zZXJ2ZXJ8fERlZmF1bHRGb3JNUmFua2VyX29sZF8xLjEuMC4wfGMzZGQ1ZTQ2LTVjOGQtNWIyOS04OGRiLWM3ZDQ1MzgxZDBjNnw1NzdlMDA3M2FjNTkzZWYyNzZiN2M5Y2V8fDF8LTF8fHw1NzdlMDA3M2FjNTkzZWYyNzZiN2M5ZGV8MzkuMTA5LjEyNC42N3x8fHx8fHx8fHx8fDE3Mi4zMS44LjE4OXw1NzdlMDA3M2FjNTkzZWYyNzY4YjdjOWF8NTc3ZTAwNzNhYzU5M2VmMjc2OGI3YzlifHx8MXx8fDZ8fHx8&x=0",
+			"click_url": "https:\/\/admin.appnext.com\/appLink.aspx?b=124022&e=87511&q=fHVzLnJheWp1bXAuY29tfDU3N2UwMDczYWM1OTNlZjI3NmI3YzlkZXw1NzMxfDI1MTE5fDEwMTF8fDd8SEt8NTc3ZTAwNzNhYzU5M2VmMjc2YjdjOWNlfDI1Nnw4NzI4Nzk3OHx8MHx8YWRfc2VydmVyfDEuNDR8MS40NHwtMXwx&subid=25119&did=",
+			"notice_url": "http:\/\/us.rayjump.com\/click?k=577e0073ac593ef276b7c9ce&p=NTczMXwyNTExOXwxMDExfDI1Nnw4NzI4Nzk3OHwwfG9wZW5hcGl8dW5rbm93bnwxMjh4MTI4fDd8QW5kcm9pZHw2LjB8anNfMS4wLjB8fHwwfEhLfHx1bmtub3dufHxhZF9zZXJ2ZXJ8fERlZmF1bHRGb3JNUmFua2VyX29sZF8xLjEuMC4wfGMzZGQ1ZTQ2LTVjOGQtNWIyOS04OGRiLWM3ZDQ1MzgxZDBjNnw1NzdlMDA3M2FjNTkzZWYyNzZiN2M5Y2V8fDF8LTF8fDB8NTc3ZTAwNzNhYzU5M2VmMjc2YjdjOWRlfDM5LjEwOS4xMjQuNjd8fHx8fHx8fHx8fHwxNzIuMzEuOC4xODl8NTc3ZTAwNzNhYzU5M2VmMjc2OGI3YzlhfDU3N2UwMDczYWM1OTNlZjI3NjhiN2M5Ynx8fDF8fHw2fDB8fHw%3D&notice=1",
+			"fca": 5,
+			"fcb": 10,
+			"template": 6,
+			"ad_source_id": 1,
+			"app_size": "34",
+			"click_mode": 0,
+			"rating": 3,
+			"landing_type": 2,
+			"ctatext": "Install",
+			"c_ct": 86400,
+			"ttc_ct": 604800,
+			"ttc": false
+		}],
+		"only_impression_url": "http:\/\/us.rayjump.com\/onlyImpression?k=577e0073ac593ef276b7c9ce&p=NTczMXwyNTExOXwxMDExfHx8fG9wZW5hcGl8dW5rbm93bnwzMDB4MzAwfDd8QW5kcm9pZHw2LjB8anNfMS4wLjB8fHwwfEhLfHx1bmtub3dufHxhZF9zZXJ2ZXJ8ODcyODc5Nzh8RGVmYXVsdEZvck1SYW5rZXJfb2xkXzEuMS4wLjB8YzNkZDVlNDYtNWM4ZC01YjI5LTg4ZGItYzdkNDUzODFkMGM2fDU3N2UwMDczYWM1OTNlZjI3NmI3YzljZXwxfDF8fHx8NTc3ZTAwNzNhYzU5M2VmMjc2YjdjOWNlfDM5LjEwOS4xMjQuNjd8fHx8fHx8fHx8fHwxNzIuMzEuOC4xODl8NTc3ZTAwNzNhYzU5M2VmMjc2OGI3YzlhfDU3N2UwMDczYWM1OTNlZjI3NjhiN2M5Ynx8fDF8fHw2fHx8fA%3D%3D"
+	}
+}

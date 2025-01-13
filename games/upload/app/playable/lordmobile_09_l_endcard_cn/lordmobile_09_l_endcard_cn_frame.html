@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <style type="text/css">
+    	html,body{
+            position: relative;
+            height: 100%;
+            width:100%;
+        }
+        body {
+            background-color: #000000;
+            margin: 0;
+            cursor: move;
+            overflow: hidden;
+            touch-action: none;
+            overflow: hidden;
+        }
+        body *{
+            -webkit-backface-visibility: hidden;
+            -moz-backface-visibility: hidden;
+            -ms-backface-visibility: hidden;
+            -o-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+    	#innerFrame{
+    		position: absolute;
+    		border:0;
+    		margin:0;
+    		padding:0;
+    		top:0;
+    	}
+
+    	.portrait .forceLandscape{
+    		-webkit-transform-origin: 0 0;
+    		-moz-transform-origin: 0 0;
+    		-ms-transform-origin: 0 0;
+    		-o-transform-origin: 0 0;
+    		transform-origin: 0 0;
+    		-webkit-transform: rotate(90deg);
+    		-moz-transform: rotate(90deg);
+    		-ms-transform: rotate(90deg);
+    		-o-transform: rotate(90deg);
+    		transform: rotate(90deg);
+    	}
+    	.landscape .forcePortrait{
+    		-webkit-transform-origin: 0 0;
+    		-moz-transform-origin: 0 0;
+    		-ms-transform-origin: 0 0;
+    		-o-transform-origin: 0 0;
+    		transform-origin: 0 0;
+    		-webkit-transform: rotate(90deg);
+    		-moz-transform: rotate(90deg);
+    		-ms-transform: rotate(90deg);
+    		-o-transform: rotate(90deg);
+    		transform: rotate(90deg);
+    	}
+    </style>
+</head>
+<body>
+	<iframe id="innerFrame"></iframe>
+	<div id="aa" style="position: none;left: 0;top: 0;right: 0;bottom: 0;"></div>
+</body>
+
+    <script type="text/javascript">
+
+    	var forcePortrait = 'landscape';// potion: 'portrait' 、 'landscape'
+
+
+    	function checkWindow(){
+    		var innerFrame = document.getElementById('innerFrame');
+			var portraitClass = (window.innerHeight>window.innerWidth)? 'portrait':'landscape';
+			document.body.className = portraitClass;
+			innerFrame.className = forcePortrait=='portrait'?'forcePortrait':'forceLandscape';
+			var forceWidth = 0;
+			var forceHeight = 0;
+
+			if(forcePortrait=='landscape'){
+				if(portraitClass=='portrait'){
+					forceWidth = window.innerHeight;
+					forceHeight = window.innerWidth;
+					innerFrame.style.left = forceHeight+'px';
+				}else{
+					forceWidth = window.innerWidth;
+					forceHeight = window.innerHeight;
+					innerFrame.style.left = '0px';
+				}
+			}else{
+				if(portraitClass=='portrait'){
+					forceWidth = window.innerWidth;
+					forceHeight = window.innerHeight;
+					innerFrame.style.left = '0px';
+				}else{
+					forceWidth = window.innerHeight;
+					forceHeight = window.innerWidth;
+					innerFrame.style.left = forceHeight+'px';
+				}
+			}
+			
+			innerFrame.style.width = forceWidth+'px';
+			innerFrame.style.height = forceHeight+'px';
+			
+			innerFrame.src = "index.html?width="+forceWidth+"&height="+forceHeight;
+
+		}
+		checkWindow();
+		window.addEventListener('resize', checkWindow, false);
+    </script>
+
+</html>

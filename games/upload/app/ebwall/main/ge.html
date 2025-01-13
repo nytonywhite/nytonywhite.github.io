@@ -1,0 +1,58 @@
+<html style="font-size:100px;">
+<head>	
+	<script src="jquery.js"></script>
+	<script>
+		var dataArray = [];
+        var dataArrayString = '';
+		$.ajax({
+			url:"feed.xml",
+            type:"GET",
+            dataType:"xml",
+            timeout: 100000,
+            error: function(xml){
+                alert('Error loading XML document'+xml);
+            },
+            success: function(xml){
+            	content = $("#thumbs");
+            	content.html('');
+                var records = $(xml).find('record');
+                var dataSet = [];
+                for(var i=0;i<100;i++){
+                	if((i+1)%20==0){
+                		generateData(dataSet);
+                		dataSet = [];	
+                	} 
+                	dataSet.push($(records[i]));
+                };
+                document.write(dataArrayString)
+            }
+        });
+
+        function generateData(dataSet){
+            var pageArray = [];
+        	for(var i=0;i<dataSet.length;i++){
+                var record = dataSet[i];
+                pageArray.push({
+                    'url':record.children('URL').text(),
+                    'picture_url':record.children('picture_url').text(),
+                    'product_name':record.children('product_name').text(),
+                    'price':record.children('price').text()
+                });
+            }
+            dataArray.push({
+                'status':1,
+                'data':pageArray
+            });
+
+            dataArrayString+=(JSON.stringify({
+                'status':1,
+                'data':pageArray
+            })+'<br/><br/><br/><br/>');
+
+        }
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

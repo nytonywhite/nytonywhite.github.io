@@ -1,0 +1,94 @@
+{
+"frames": [
+	{
+		"filename": "MainMenuWithText.png",
+		"frame": {"x":0, "y":70, "w":496, "h":496},
+		"spriteSourceSize": {"x":0,"y":0,"w":496,"h":496},
+		"sourceSize": {"w":496,"h":496}
+	},
+	{
+		"filename": "best-score.png",
+		"frame": {"x":0, "y":971, "w":52, "h":42},
+		"spriteSourceSize": {"x":0,"y":0,"w":52,"h":42},
+		"sourceSize": {"w":52,"h":42}
+	},
+	{
+		"filename": "game-title.png",
+		"frame": {"x":0, "y":0, "w":576, "h":69},
+		"spriteSourceSize": {"x":0,"y":0,"w":576,"h":69},
+		"sourceSize": {"w":576,"h":69}
+	},
+	{
+		"filename": "music-off.png",
+		"frame": {"x":0, "y":769, "w":100, "h":100},
+		"spriteSourceSize": {"x":0,"y":0,"w":100,"h":100},
+		"sourceSize": {"w":100,"h":100}
+	},
+	{
+		"filename": "music-on.png",
+		"frame": {"x":0, "y":870, "w":100, "h":100},
+		"spriteSourceSize": {"x":0,"y":0,"w":100,"h":100},
+		"sourceSize": {"w":100,"h":100}
+	},
+	{
+		"filename": "receive.png",
+		"frame": {"x":101, "y":794, "w":64, "h":64},
+		"spriteSourceSize": {"x":0,"y":0,"w":64,"h":64},
+		"sourceSize": {"w":64,"h":64}
+	},
+	{
+		"filename": "restart.png",
+		"frame": {"x":101, "y":567, "w":96, "h":96},
+		"spriteSourceSize": {"x":0,"y":0,"w":96,"h":96},
+		"sourceSize": {"w":96,"h":96}
+	},
+	{
+		"filename": "sfx-off.png",
+		"frame": {"x":0, "y":567, "w":100, "h":100},
+		"spriteSourceSize": {"x":0,"y":0,"w":100,"h":100},
+		"sourceSize": {"w":100,"h":100}
+	},
+	{
+		"filename": "sfx-on.png",
+		"frame": {"x":0, "y":668, "w":100, "h":100},
+		"spriteSourceSize": {"x":0,"y":0,"w":100,"h":100},
+		"sourceSize": {"w":100,"h":100}
+	},
+	{
+		"filename": "share.png",
+		"frame": {"x":101, "y":664, "w":64, "h":64},
+		"spriteSourceSize": {"x":0,"y":0,"w":64,"h":64},
+		"sourceSize": {"w":64,"h":64}
+	},
+	{
+		"filename": "star.png",
+		"frame": {"x":101, "y":729, "w":64, "h":64},
+		"spriteSourceSize": {"x":0,"y":0,"w":64,"h":64},
+		"sourceSize": {"w":64,"h":64}
+	},
+	{
+		"filename": "transparent32X32.png",
+		"frame": {"x":101, "y":924, "w":32, "h":32},
+		"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+		"sourceSize": {"w":32,"h":32}
+	},
+	{
+		"filename": "trophy.png",
+		"frame": {"x":53, "y":971, "w":48, "h":42},
+		"spriteSourceSize": {"x":0,"y":0,"w":48,"h":42},
+		"sourceSize": {"w":48,"h":42}
+	},
+	{
+		"filename": "white-square.png",
+		"frame": {"x":101, "y":859, "w":64, "h":64},
+		"spriteSourceSize": {"x":0,"y":0,"w":64,"h":64},
+		"sourceSize": {"w":64,"h":64}
+	}
+
+],
+"meta": {
+	"image": "spritesheet.png",
+	"size": {"w": 1024, "h": 1024},
+	"scale": "1"
+}
+}

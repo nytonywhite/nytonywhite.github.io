@@ -1,0 +1,41 @@
+<html>
+
+	<body>
+		<iframe id="template" src="" frameborder="0" style="width:400px;height:400px;"></iframe>
+	</body>
+
+	<script type="text/javascript">
+
+	var offer = {
+            "id":1,
+            "title": "APUS Launcher-Small,Fast,Boost",
+            "desc": "5-stars rated over 1 million, and installed on over 90 million devices in over 235 countries.",
+            "package_name": "com.apusapps.launcher",
+            "icon_url": "http://d11kdtiohse1a9.cloudfront.net/common/2015/01/23/142199355187006.pngxxx",
+            "image_url": "",
+            "image_size":"1200x627", 
+            "impression_url": "http://127.0.0.1/adn_net/impression?token=54f6a22273a9f6580a000971&sign=tXWo8YoZf7306714&timestamp=1425449503",
+            "click_url": "http://127.0.0.1/adn_net/click?token=54f6a22273a9f6580a000981&sign=aAavDASV4a06225f&timestamp=1425449503&cid=2138&aid=1",
+            "notice_url": "",
+            "pre_click": true,
+            "template":1, 
+            "ad_source_id":1, 
+            "fca":10,
+            "fcb":15,
+            "click_mode":5, 
+            "rating":4.5,
+            "landing_type":2,
+            "ctatext":"Install",
+			"c_ct":84600,
+			"ttc_ct":84600,
+	};
+
+	window.onload = function(){
+		var dataString = JSON.stringify(offer);
+		var dataUrlString = encodeURIComponent(dataString);
+		document.getElementById('template').src = 'tp.html?data='+dataUrlString;
+
+	}
+
+	</script>
+</html>

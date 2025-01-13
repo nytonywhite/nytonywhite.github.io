@@ -1,0 +1,58 @@
+.frame360
+{
+	animation: tip360 2s infinite;
+	-moz-animation: tip360 2s infinite;	/* Firefox */
+	-webkit-animation: tip360 2s infinite;	/* Safari 和 Chrome */
+	-o-animation: tip360 2s infinite;	/* Opera */
+	background-size: contain;
+}
+
+@keyframes tip360
+{
+0% {background-image: url(../images/360/6_00000.png);}
+2% {background-image: url(../images/360/6_00001.png);}
+4% {background-image: url(../images/360/6_00002.png);}
+6% {background-image: url(../images/360/6_00003.png);}
+8% {background-image: url(../images/360/6_00004.png);}
+10% {background-image: url(../images/360/6_00005.png);}
+12% {background-image: url(../images/360/6_00006.png);}
+14% {background-image: url(../images/360/6_00007.png);}
+16% {background-image: url(../images/360/6_00008.png);}
+18% {background-image: url(../images/360/6_00009.png);}
+20% {background-image: url(../images/360/6_00010.png);}
+22% {background-image: url(../images/360/6_00011.png);}
+24% {background-image: url(../images/360/6_00012.png);}
+26% {background-image: url(../images/360/6_00013.png);}
+28% {background-image: url(../images/360/6_00014.png);}
+30% {background-image: url(../images/360/6_00015.png);}
+32% {background-image: url(../images/360/6_00016.png);}
+34% {background-image: url(../images/360/6_00017.png);}
+36% {background-image: url(../images/360/6_00018.png);}
+38% {background-image: url(../images/360/6_00019.png);}
+40% {background-image: url(../images/360/6_00020.png);}
+42% {background-image: url(../images/360/6_00021.png);}
+44% {background-image: url(../images/360/6_00022.png);}
+46% {background-image: url(../images/360/6_00023.png);}
+48% {background-image: url(../images/360/6_00024.png);}
+50% {background-image: url(../images/360/6_00025.png);}
+52% {background-image: url(../images/360/6_00026.png);}
+54% {background-image: url(../images/360/6_00027.png);}
+56% {background-image: url(../images/360/6_00028.png);}
+58% {background-image: url(../images/360/6_00029.png);}
+60% {background-image: url(../images/360/6_00030.png);}
+62% {background-image: url(../images/360/6_00031.png);}
+64% {background-image: url(../images/360/6_00032.png);}
+66% {background-image: url(../images/360/6_00033.png);}
+68% {background-image: url(../images/360/6_00034.png);}
+70% {background-image: url(../images/360/6_00035.png);}
+72% {background-image: url(../images/360/6_00036.png);}
+74% {background-image: url(../images/360/6_00037.png);}
+76% {background-image: url(../images/360/6_00038.png);}
+78% {background-image: url(../images/360/6_00039.png);}
+80% {background-image: url(../images/360/6_00040.png);}
+82% {background-image: url(../images/360/6_00041.png);}
+84% {background-image: url(../images/360/6_00042.png);}
+86% {background-image: url(../images/360/6_00043.png);}
+88% {background-image: url(../images/360/6_00044.png);}
+100% {background-image: url(../images/360/6_00044.png);}
+}

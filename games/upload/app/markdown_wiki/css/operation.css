@@ -1,0 +1,141 @@
+*{
+	padding:0px;
+	margin:0px;
+}
+.clear{
+	clear: both;
+}
+header{
+}
+header h2{
+	background-color: red;
+	padding: 5px;
+}
+.brand-logo{
+	margin-left: 5px;
+}
+.search{
+	display: block;
+	padding: 15px;
+}
+.search dd{
+	display: inline-block;
+	margin-right: 10px;
+}
+button{
+	padding: 3px 20px;
+	margin: 5px;
+}
+table{
+	/*border: 1px solid #333;*/
+}
+table th{
+	text-align: center;
+}
+table td{
+	text-align: center;
+	/*border: 1px solid #333;*/
+}
+table.dataTable tbody td.editable{
+	padding: 0;
+	vertical-align: middle;
+
+}
+table td textarea{
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	vertical-align: middle;
+	text-align: center;
+	padding: 5px;
+}
+.pic{
+	width: 100px;
+	height: auto;
+}
+#container{
+	padding: 10px;
+}
+
+.toggle {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 auto;
+  width: 100px;
+  height: 24px;
+  color: white;
+  outline: 0;
+  text-decoration: none;
+  border-radius: 40px;
+  border: 1px solid #546E7A;
+  background-color: #E4E6E6;
+  transition: all 500ms;
+}
+.toggle:active {
+  /*background-color: #aaaaaa;*/
+  color:white;
+}
+.toggle:hover:not(.toggle--moving):after {
+  /*background-color: #ffffff;*/
+  color:white;
+}
+.toggle:after {
+  display: block;
+  position: absolute;
+  top: 2px;
+  bottom: 2px;
+  left: 4px;
+  width: calc(50% - 6px);
+  line-height: 18px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: white;
+  background-color: #ffffff;
+  border: 1px solid;
+  transition: all 500ms;
+}
+.toggle--on{
+  background-color: #66BB6A;
+}
+.toggle--on:after {
+  content: 'On';
+  border-radius: 20px 2px 2px 20px;
+  color: white;
+  background-color: #66BB6A;
+}
+.toggle--off{
+  background-color: #999;
+}
+.toggle--off:after {
+  content: 'Off';
+  border-radius: 2px 20px 20px 2px;
+  transform: translate(100%, 0);
+  color: white;
+  background-color: #999;
+}
+
+.toggle--moving {
+  /*background-color: #ffffff;*/
+  color: blue;
+}
+.toggle--moving:after {
+  color: transparent;
+  border-color: white;
+  color: white;
+  transition: color 0s, transform 500ms, border-radius 500ms,           background-color 500ms;
+}
+
+.saveBtn,.cancelBtn,.resetBtn{
+	width: 60px;
+}
+
+table.dataTable{
+	border-collapse: collapse;
+}
+
+.btn .material-icons{
+	vertical-align: middle;
+}
