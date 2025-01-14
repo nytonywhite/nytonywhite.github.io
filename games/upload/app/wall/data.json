@@ -1,0 +1,22 @@
+{
+	"status": 1,
+	"msg": "success",
+	"data": [{
+		"id": 14550109,
+		"title": "少年三國志:登入7天送趙雲",
+		"desc": "【百萬玩家期待】日系華麗RPG策略手遊《少年三國志》一起玩！最好玩【OB公測好禮】搶先下載！完成任務就送10,000元寶【召喚三國英雄】呂布！關羽！佈陣你的三國武將《少年三國志》官方粉絲團：https://www.facebook.com/icantw.ss2015全新三國遊戲鉅作《少年三國志》正式登台！●最好玩！首創「無雙」類別玩法！幹掉所有老梗三國，全新無雙RPG策略玩法，立體呈現強少年三國武將！●最簡單！三國武將隨手蒐集！武將全新進化！超過3,000種戰鬥陣容，培育最強橙色武將，組合三國戰鬥隊伍！●",
+		"package_name": "id981785363",
+		"icon_url": "icon2.png",
+		"image_url": "bg.jpg",
+		"impression_url": "http://sg.rayjump.com/impression?k=56ea8c6e8992701b0fb67949&p=MXwxODU3MXwwf…FiMGY4YjY3OTJ8NTZlYThjNmU4OTkyNzAxYjBmOGI2NzkzfHx8MXx8fDB8MXx8fA%3D%3D&x=0",
+		"click_url": "http://tracking.lenzmx.com/click?mb_pl=ios&mb_nt=cb7261&mb_campid=pm_shangu…ZTg5OTI3MDFiMGZiNjc5NDl8NTk5fDE0NTUwMTA5fDB8NXw%3D&mb_subid=23799&mb_idfa=",
+		"notice_url": "http://sg.rayjump.com/click?k=56ea8c6e8992701b0fb67949&p=MXwxODU3MXwwfDU5OX…xYjBmOGI2NzkyfDU2ZWE4YzZlODk5MjcwMWIwZjhiNjc5M3x8MHwxfHx8MHwxfHx8&notice=1",
+		"offer_name": "pm_shanguozhi_hk_mo_ios",
+		"install_token": "NHxzZy5yYXlqdW1wLmNvbXw1NmVhOGM2ZTg5OTI3MDFiMGZiNjc5NTl8MXwxODU3MXwwfDEyOHgxMjh8M3xIS3w1NmVhOGM2ZTg5OTI3MDFiMGZiNjc5NDl8NTk5fDE0NTUwMTA5fDB8NXw=",
+		"app_size": "96",
+		"click_mode": 5,
+		"c_ct": 86400,
+		"ttc_ct": 604800,
+		"pre_click": false
+	}]
+}

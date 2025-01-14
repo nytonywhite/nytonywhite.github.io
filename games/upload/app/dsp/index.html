@@ -1,0 +1,421 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Mobvista DSP通用模版预览</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="dns-prefetch" href="https://adn.mobvista.com/">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://adn.mobvista.com/static/images/mvlogo114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://adn.mobvista.com/static/images/mvlogo72.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="https://adn.mobvista.com/static/images/mvlogo57.png">
+    <link rel="shortcut icon" href="https://adn.mobvista.com/static/images/favicon.ico" type="image/x-icon">
+    <!--<link href="https://adn.mobvista.com/static/css/min/bootstrap_3.3.4.min.css?v=3.0.1" rel="stylesheet">-->
+    <!--<script src="https://adn.mobvista.com/static/js/jquery-1x.min.js?v=3.0.1"></script>-->
+    <script src="https://newplayable.dspunion.com/lib/jquery/jquery-1.11.3.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script type="text/javascript">
+    </script>
+    <style type="text/css">
+        .page-header {
+            margin: 0;
+            text-align: center;
+        }
+        .page-header img{
+            margin-bottom: 10px;
+        }
+        .content {
+            min-height: 600px;
+        }
+
+        .left-box {
+            background-color: #f3f3f3;
+            padding: 20px 40px;
+            height: 100%;
+        }
+
+        .right-box {
+            height: 100%;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .model-title {
+            font-weight: bold;
+        }
+
+        .select-item {
+            margin-bottom: 30px;
+        }
+
+        @media screen and (max-width: 920px) {
+            .left-box {
+                height: auto;
+            }
+        }
+
+        #phone-box-vertical{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            opacity:1;
+            min-width: 360px;
+            display: inline-block;
+            width: 340px;
+            height: 692.5px;
+            background: url("./phone.png") no-repeat center;
+            background-size: 100% 100%;
+            padding: 80px 20px;
+        }
+
+        .model-box {
+            background-color: #fff;
+            width: 100%;
+            height: 100%;
+        }
+        #phone-box-transverse{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            display: inline-block;
+            opacity: 0;
+            width: 728px;
+            height: 360px;
+            background: url("./phone_transever.png") no-repeat center;
+            background-size: 100% 100%;
+            padding: 20px 80px;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+        }
+
+        .footer {
+            text-align: center;
+            margin: 30px 0;
+        }
+        @media (max-width: 320px) {
+            .phone-box {
+                min-width: 280px;
+                display: inline-block;
+                width: 280px;
+                height: 585px;
+                background: url("./phone.png") no-repeat center;
+                background-size: 100% 100%;
+                padding: 80px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid page-container">
+    <div class="content">
+        <div class="row">
+            <div class="col-md-2 left-box">
+                <div class="page-header">
+                    <h3 class="row">
+                        <a href="https://www.mobvista.com" class="col-sm-6 col-xs-12 col-md-12"><img src="https://adn.mobvista.com/static/images/mobvista.png"></a>
+                        <span class="col-sm-6 col-xs-12 col-md-12">模板预览</span>
+                    </h3>
+                </div>
+                <div>
+                    <div class="row">
+                        <div class="select-item col-sm-6 col-xs-12 col-md-12">
+                            <select class="form-control" id="screenDirection">
+                                <option value="portrait">竖屏</option>
+                                <option value="landscape">横屏</option>
+                            </select>
+                        </div>
+                    </div>
+                    <p class="model-title">DSP通用模版1期</p>
+                    <div class="row">
+                        <div class="select-item col-sm-6 col-xs-12 col-md-12">
+                            <select class="form-control" id="adType1">
+                                <option value="">- adtype -</option>
+                                <option value="banner">banner</option>
+                                <option value="interstitial">interstitial</option>
+                            </select>
+                        </div>
+                        <div class="select-item col-sm-6 col-xs-12 col-md-12">
+                            <select class="form-control" id="template1">
+                            </select>
+                        </div>
+                    </div>
+                    <p class="model-title">DSP通用模版2期</p>
+                    <div class="row">
+                        <div class="select-item col-sm-6 col-xs-12 col-md-12">
+                            <select class="form-control" id="adType2">
+                                <option value="">- adtype -</option>
+                                <option value="MREC">MREC模板</option>
+                                <option value="video">插屏中视频模板</option>
+                            </select>
+                        </div>
+                        <div class="select-item col-sm-6 col-xs-12 col-md-12">
+                            <select class="form-control" id="template2">
+                            </select>
+                        </div>
+                    </div>
+                    <p class="model-title">RichMedia-Show模版</p>
+                    <div class="row">
+                        <div class="select-item col-sm-6 col-xs-12 col-md-12">
+                            <select class="form-control" id="richMediaTemplate" onchange='templateChange(this)'>
+                                <option value="">- Template -</option>
+                                <option value="gallery">Photo Gallery</option>
+                                <option value="animate">Animation</option>
+                                <option value="video">Video</option>
+                                <option value="game">Falling Object Game</option>
+                            </select>
+                        </div>
+                        <div class="select-item col-sm-6 col-xs-12 col-md-12">
+                            <select class="form-control" id="richMediaSize" onchange='sizeChange(this)'>
+                                <option value="">- size -</option>
+                                <option value="width=320xheight=50">320x50</option>
+                                <option value="width=320xheight=480">320x480</option>
+                                <option value="width=1200xheight=627">1200x627</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-10 right-box">
+                <div class="phone-box" id="phone-box-vertical">
+                    <div class="model-box">
+                        <iframe src="https://newplayable.dspunion.com/dsp_model_test/m1/slider03/slider03.html"
+                                frameborder="0" id="iframeUrl"></iframe>
+                    </div>
+                </div>
+                <div class="phone-box" id="phone-box-transverse">
+                    <div class="model-box">
+                        <iframe src="https://newplayable.dspunion.com/dsp_model_test/m1/slider03/slider03.html"
+                                frameborder="0" id="iframeUrlTransverse"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        Copyright © 2012-2018 Mobvista, All Rights Reserved.
+    </div>
+</div>
+<script>
+    //原来预览页面GA统计,暂留
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments) 
+            }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-26206631-2', 'auto');
+    ga('send', 'pageview');
+
+    //获取当前主域名地址
+    let host="https://"+window.location.host;
+    //定义模版相对url
+    let adData = {
+        "banner": {
+            "通用banner模板V1": "/dsp_model_test/m1/banner01/",
+            "通用banner模板V2": "/dsp_model_test/m1/banner02/",
+            "通用banner模板V3": "/dsp_model_test/m1/banner03/",
+        },
+        "interstitial": {
+            "通用interstitial横模版v1": "/dsp_model_test/m1/fullscreen01/",
+            "通用interstitial横模版v2": "/dsp_model_test/m1/fullscreen02/",
+            "通用interstitial竖模版v1": "/dsp_model_test/m1/fullscreen03/",
+            "通用interstitial竖模版v2": "/dsp_model_test/m1/fullscreen04/",
+            "通用轮播竖模版v1": "/dsp_model_test/m1/slider01/",
+            "通用轮播竖模版v2": "/dsp_model_test/m1/slider03/",
+            "通用轮播手机横模版v1": "/dsp_model_test/m1/slider01_landscape/",
+            "通用轮播手机横模版v2": "/dsp_model_test/m1/slider03_landscape/",
+        },
+        "MREC": {
+            "通用MREC模板V1": "/dsp_model_test/m2/banner_300_250_01/",
+            "通用MREC模板V2": "/dsp_model_test/m2/banner_300_250_02/",
+        },
+        "video": {
+            "通用插屏视频模板V1": "/dsp_model_test/m2/screen_video_01/",
+            "通用插屏视频模板V2": "/dsp_model_test/m2/screen_video_02/",
+        },
+    };
+    //获得iframeUrl
+    function getIframeUrl(template) {
+        if (template && template.addEventListener) {
+            template.addEventListener('change', function (e) {
+                let ev = e || window.event;
+                let target = ev.target || ev.srcElement;
+                let screenDirection = document.getElementById("screenDirection");
+                if(target.value==="/dsp_model_test/m1/slider01_landscape/"||target.value==="/dsp_model_test/m1/slider03_landscape/"){
+                    screenDirection.value="landscape";
+                    $("#phone-box-vertical").css({"opacity":"0"});
+                    $("#phone-box-transverse").css({"opacity":"1"});
+                }else{
+                    screenDirection.value="portrait";
+                    $("#phone-box-vertical").css({"opacity":"1"});
+                    $("#phone-box-transverse").css({"opacity":"0"});
+                }
+                let iframeUrl = host+target.value;
+                document.getElementById("iframeUrl").src = iframeUrl;
+                document.getElementById("iframeUrlTransverse").src = iframeUrl;
+            }, false)
+        }
+    }
+    //监听select选择
+    function selectChange(template,adType) {
+        let templateOptionHtml = "";
+        $(template).append(`<option>- Template -</option>`);
+        if (adType && adType.addEventListener) {
+            adType.addEventListener('change', function (e) {
+                $(template).empty();
+                $(template).append(`<option>- Template -</option>`);
+                let ev = e || window.event;
+                let target = ev.target || ev.srcElement;
+                if (target.value) {
+                    templateOptionHtml = "<option>- Template -</option>";
+                    Object.keys(adData[target.value]).forEach(function(key){
+                        let temp=adData[target.value];
+                        templateOptionHtml += `<option value="${temp[key]}">${key}</option>`;
+                    });
+                    if (template) {
+                        $(template).html(templateOptionHtml);
+                    }
+                }
+            }, false)
+        }
+        getIframeUrl(template);
+    }
+    //横竖屏幕选择
+    function selectScreen() {
+        //获取横竖屏
+        let screenDirection = document.getElementById("screenDirection");
+        if (screenDirection && screenDirection.addEventListener) {
+            screenDirection.addEventListener('change', function (e) {
+                let ev = e || window.event;
+                let target = ev.target || ev.srcElement;
+                if (target.value && target.value === "landscape") {
+                    $("#phone-box-vertical").css({"opacity":"0"});
+                    $("#phone-box-transverse").css({"opacity":"1"});
+                } else if (target.value && target.value === "portrait") {
+                    $("#phone-box-vertical").css({"opacity":"1"});
+                    $("#phone-box-transverse").css({"opacity":"0"});
+                }
+            }, false)
+        }
+    }
+    window.onload = function () {
+        //1期模版
+        let adType1 = document.getElementById("adType1");
+        let template1 = document.getElementById("template1");
+        selectChange(template1,adType1);
+        //2期模版
+        let adType2 = document.getElementById("adType2");
+        let template2 = document.getElementById("template2");
+        selectChange(template2,adType2);
+        //横竖屏幕选择调用
+        selectScreen();
+    }
+    //原来预览代码
+    var templateSet = {
+        'animate': 'https://hybird.rayjump.com/dsp/tpl/phase1/animation.html',
+        'video': 'https://hybird.rayjump.com/dsp/tpl/phase1/video.html',
+        'game': 'https://hybird.rayjump.com/dsp/tpl/phase1/falling.html',
+        'gallery': 'https://hybird.rayjump.com/dsp/tpl/phase1/photo.html'
+    }
+
+    function templateChange(el) {
+        var type = el.selectedOptions[0].value;
+        if (type.length > 0) {
+            document.getElementById('iframeUrl').src = templateSet[type];
+            document.getElementById("iframeUrlTransverse").src = templateSet[type];
+        }
+
+        updateScreen();
+
+        clearPhoneSizeAction();
+        if (type == 'animate') {
+            window.checkPhoneSizeTimmer = window.setInterval(window.checkPhoneSizeAction, 200);
+        }
+    }
+
+    function sizeChange(el) {
+        var size = el.selectedOptions[0].value;
+        var type = document.getElementById('richMediaTemplate').selectedOptions[0].value;
+
+        updateScreen();
+    }
+
+    function updateScreen() {
+        var size = document.getElementById('richMediaSize').selectedOptions[0].value;
+        var type = document.getElementById('richMediaTemplate').selectedOptions[0].value;
+
+        document.getElementById('iframeUrl').src = templateSet[type] + '?' + size.replace('x', '&');
+        document.getElementById('iframeUrlTransverse').src = templateSet[type] + '?' + size.replace('x', '&');
+    }
+
+
+    function getTdSize() {
+        var phone_box = $('#phone-box');
+        var td_height = (window.innerHeight - phone_box.offset().top - 100);
+        phone_box.addClass('scale').css({
+            'height': td_height + 'px'
+        });
+
+        var phone_warp = $('.phone_warp').addClass('scale');
+        var warp_height = phone_warp.height();
+        var td_height = phone_box.height();
+        var scale_rate = Math.floor(td_height * 100 / warp_height) / 100;
+        phone_warp.css('transform', 'scale(' + scale_rate + ')');
+
+    }
+
+
+    function fitScreen() {
+        if ($(window).width() < 600) {
+            $('.phone_warp').removeClass('scale').css('transform', 'scale(1)');
+            $('#phone-box').removeClass('scale').css('height', 'auto');
+
+            var width = $('.phone_container').width();
+            var scaleRate = width / 400;
+            // var newHeight = nh/oh = scale
+            $('.iframeUrl').css('transform', 'scale(' + scaleRate + ')').css('top', Math.floor(78 * scaleRate) + 'px')
+        } else {
+            $('.iframeUrl').css('transform', 'scale(1)').css('top', '');
+            getTdSize();
+        }
+        phoneOrgWidth = $('#iframeUrl').width();
+    }
+    window.checkPhoneSizeTimmer = null;
+    window.phoneOrgWidth = 0;
+    window.hasChange = false;
+    window.checkPhoneSizeAction = function () {
+        var phoneWidth = $('#phone_screen').width();
+        if ((phoneOrgWidth != phoneWidth)) {
+
+            if (!hasChange) {
+                var newPhoneWidth = phoneOrgWidth * (phoneOrgWidth / phoneWidth);
+                $('#phone_screen').css('width', newPhoneWidth + 'px');
+                window.hasChange = true;
+            } else {
+                $('#phone_screen').css('width', '');
+                window.hasChange = false;
+            }
+        }
+    }
+    window.clearPhoneSizeAction = function () {
+        if (checkPhoneSizeTimmer) window.clearInterval(window.checkPhoneSizeTimmer);
+        $('#phone_screen').css('width', '');
+        window.hasChange = false;
+    }
+</script>
+</body>
+</html>
+;

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mobvista Panorama</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/360.css">
+    <style>
+        html,body{
+            position: relative;
+            height: 100%;
+            width:100%;
+        }
+        body {
+            background-color: #000000;
+            margin: 0;
+            cursor: move;
+            overflow: hidden;
+            touch-action: none;
+        }
+        .surface { width: 1026px; height: 1026px; background-size: cover; position: absolute; }
+        .surface .bg { position: absolute; width: 1026px; height: 1026px; }
+        #fontscreen{
+            position: absolute;
+            z-index: 99;
+            left: 0;
+            top:0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,255,0);
+            display: block;
+        }
+
+        #fontscreen h3{
+            width: 100%;
+            text-align: center;
+        }
+
+        
+        #fontscreen h3>#dlimgbtn{
+            display: none;
+            color:white;
+            padding: 10px;
+            position: relative;
+            bottom: 0px;
+            opacity: 0;
+            transition: 2s all;
+            text-decoration: none;
+            width:60%;
+            max-width: 240px;
+        }
+        #fontscreen h3>#dlimgbtn>img{
+            width: 100%;
+            height: auto;
+        }
+        #fontscreen h3>#dltxtbtn.show,
+        #fontscreen h3>#dlimgbtn.show{
+            display: inline-block;
+        }
+        #fontscreen h3>#dltxtbtn.view{
+            opacity: 0.6;
+        }
+        #fontscreen h3>#dlimgbtn.view{
+            opacity: 1;
+        }
+
+        #controlBtn{
+            display: inline-block;
+            border: 1px solid #2196F3;
+            color: #2196F3;
+            padding: 3px;
+            border-radius: 5px;
+            position: absolute;
+            right: 10px;
+            bottom:10px;
+            margin: 10px;
+            text-align: center;
+            opacity: 0.2;
+            font-family: arial;
+            font-size: 12px;
+            width: 72px;
+        }
+
+        #myContainer{
+            height:100%;
+        }
+
+        #lpleft,#lpright{
+            position: absolute;
+            height: 100%;
+            top: 0;
+        }
+        #lpleft{
+            left: 0;
+            background-image: url('images/endcard_gunsight.png');
+            background-size: 100% 100%;
+        }
+
+        #lpleft .logo{
+            width: 55%;
+            height: auto;
+            position: absolute;
+            left:5%;
+            top:5%;
+            z-index: 9;
+        }
+        #lpleft .frame360Warp{
+            position: absolute;
+            left: 10px;
+            bottom:10px;
+            width: 20%;
+            padding-top: 20%;
+        }
+        #lpleft .frame360{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top:0px;
+            left: 0px;
+        }
+        #lpright{
+            right: 0;
+            background-image: url('images/endcard_bg.jpg');
+            background-size: 100% 100%;
+        }
+        #iconContainer{
+            margin-top: 19%;
+            width:100%;
+            text-align: center;
+        }
+        #iconContainer img{
+            display: inline-block;
+            vertical-align:middle;
+            width:30%;
+            height: auto;
+        }
+        #lpright h1{
+            font-size: 1.4rem;
+            margin: 0.5rem 0;
+            color:white;
+            width: 100%;
+            text-align: center;
+        }
+        #rateContain{
+            width: 100%;
+            text-align: center;
+        }
+        #rateContain img{
+            width: 50%;
+            height: auto;
+            display: inline-block;
+            vertical-align:top;
+        }
+        #lpright h3{
+            font-size:1.6rem;
+            text-align: center;
+        }
+        #lpright h3>#dltxtbtn{
+            display: block;
+            color:white;
+            padding: 10px;
+            position: relative;
+            bottom: 20px;
+            opacity: 1;
+            transition: 2s all;
+            text-decoration: none;
+            background-image: url('images/endcard_but_installnow.png');
+            background-size: 100% 100%;
+            width: 60%;
+            padding: 1.5rem 0;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div id="surface_0" class="surface">
+        <img class="bg" src="images/posx.jpg" alt="">
+    </div>
+    <div id="surface_1" class="surface">
+        <img class="bg" src="images/negx.jpg" alt="">
+    </div>
+    <div id="surface_2" class="surface">
+        <img class="bg" src="images/posy.jpg" alt="">
+    </div>
+    <div id="surface_3" class="surface">
+        <img class="bg" src="images/negy.jpg" alt="">
+    </div>
+    <div id="surface_4" class="surface">
+        <img class="bg" src="images/posz.jpg" alt="">
+    </div>
+    <div id="surface_5" class="surface">
+        <img class="bg" src="images/negz.jpg" alt="">
+    </div>
+</div>
+
+<div id="myContainer">
+    
+</div>
+<div id="fontscreen"> 
+    <div id="lpleft">
+        <div id="controlBtn">
+            GYRO ON
+        </div>
+        
+        <img src="images/logo.png" alt="" class="logo"/>
+        <div class="frame360Warp">
+            <div id="frame360" class=""></div>
+        </div>
+        
+    </div>
+    <div id="lpright">
+        <div id="iconContainer">
+            <img border="0" src="images/endcard_appicon.png" alt="">
+        </div>
+        <h1>狙击行动3D: 代号猎鹰</h1>
+        <div id="rateContain">
+            <img border="0" src="images/endcard_appstar.png" alt="">
+        </div>
+        <h3>
+            <a target="_blank" class="show" id="dltxtbtn">Download APP</a>
+            <a target="_blank" id="dlimgbtn"><img id="dlimg" src=""></a>
+        </h3>
+    </div>
+
+</div>
+<script src="js/config.js"></script>
+<script src="js/three.min.js"></script>
+<script src="js/CSS3DRenderer.min.js"></script>
+<script src="js/DeviceOrientationControls.js"></script>
+<script src="js/index.js"></script>
+<script src="js/gameUtil.js"></script>
+<script type="text/javascript">
+    loadImages({
+        urlHeader:'images/360/6_000',
+        format:'.png',
+        start:0,
+        end:44,
+        numberSpace:2
+    },function () {
+        document.getElementById('frame360').className = 'frame360';
+    });
+
+</script>
+
+
+<script src="js/base64.js"></script>
+<script src="js/util.js"></script>
+<script src="js/windvane.debug.js"></script>
+<script src="js/init.js"></script>
+</body>
+</html>

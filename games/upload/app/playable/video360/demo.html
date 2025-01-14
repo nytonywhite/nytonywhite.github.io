@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<!-- required libraries -->
+	<script src="js/jquery-1.7.2.min.js"></script>
+	<script src="js/three.min.js"></script>
+	 
+	<!-- Valiant360 plugin -->
+	<script src="js/jquery.valiant360.min.js"></script>
+	 
+	<!-- Valiant360 styles -->
+	<link rel="stylesheet" type="text/css" href="css/valiant360.css">
+	<style type="text/css">
+		html,body{
+			width: 100%;
+			height: 100%;
+		}
+		.valiant{
+			width: 100%;
+			height: 100%;
+		}
+	</style>
+</head>
+<body>
+	<!-- Valiant360 player container -->
+	<div class="valiant" data-video-src="videos/overpass-2k.mp4"></div>
+</body>
+	<script type="text/javascript">
+		// instantiate script on your container
+		$(function(argument) {
+			// body...
+			// $('.valiant').Valiant360();
+			// $('.valiant').Valiant360('loadVideo', 'videos/overpass-2k.mp4');
+			// $('.valiant').Valiant360('play');
+			// alert(1)
+		})
+
+		$(document).ready(function() {
+			$('.valiant').Valiant360();
+		});
+
+	</script>
+</html>

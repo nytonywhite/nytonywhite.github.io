@@ -1,0 +1,35 @@
+{
+  "resources": [
+    "audiosprite-sfx.ogg",
+    "audiosprite-sfx.m4a",
+    "audiosprite-sfx.mp3",
+    "audiosprite-sfx.ac3"
+  ],
+  "spritemap": {
+    "bonus1": {
+      "start": 0,
+      "end": 2.0246485260770974,
+      "loop": false
+    },
+    "bonus2": {
+      "start": 4,
+      "end": 5.99156462585034,
+      "loop": false
+    },
+    "explode": {
+      "start": 7,
+      "end": 7.484829931972789,
+      "loop": false
+    },
+    "gameover": {
+      "start": 9,
+      "end": 11,
+      "loop": false
+    },
+    "receiver": {
+      "start": 12,
+      "end": 12.309977324263038,
+      "loop": false
+    }
+  }
+}

@@ -1,0 +1,103 @@
+{
+    "status": 100,
+    "msg": "success",
+    "data":[
+        {
+            "name": "adsense",
+            "ver": 617,           
+            "pkSize": 1024 ,     
+            "url": "http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",    
+            "check": "NoZWQsIG5vdCBvbmx5IGJ5IGhpcyByZWF",    
+            "state": 1,             
+            "appID": "17019",        
+            "pubID": "ca-pub-2204455335532111",         
+            "reserve": "ap82394739483748",         
+            "weight": {
+                "banner": {
+                    "name": "banner",       
+                    "weight": 5,             
+                    "unitID": "2538769187"    
+                },
+                "overlay":{
+                    "name": "overlay",        
+                    "weight": 5,            
+                    "unitID": "6968968787"   
+                },
+                "floaticon":{
+                    "name": "icon",        
+                    "weight": 2,            
+                    "unitID": "6854230780"   
+                }
+            }
+        },
+        {
+            "name": "mobvista",
+            "ver": 1,           
+            "pkSize": 1024 ,     
+            "url": "http://net.rayjump.com/site/request?",    
+            "check": "NoZWQsIG5vdCBvbmx5IGJ5IGhpcyByZWF",    
+            "state": 1,             
+            "appID": "17019",         
+            "pubID": "668d571bff3dc16a26ad81642c64504d",         
+            "reserve": "ap82394739483748",         
+            "weight": {
+                "banner": {
+                    "name": "banner",        
+                    "weight": 3,             
+                    "unitID": ""     
+                },
+                "overlay":{
+                    "name": "overlay",         
+                    "weight": 3,              
+                    "unitID": ""     
+                }
+            }
+        },
+        {
+            "name": "mobfox",
+            "ver": 1,           
+            "pkSize": 1024 ,     
+            "url": "http:\/\/my.mobfox.com\/ad.js",    
+            "check": "NoZWQsIG5vdCBvbmx5IGJ5IGhpcyByZWF",    
+            "state": 1,             
+            "appID": "17042",         
+            "pubID": "ca-pub-9066977823953139",         
+            "reserve": "ap82394739483748",   
+            "weight": {
+                "banner": {
+                    "name": "banner",        
+                    "weight": 1,             
+                    "unitID": "2816154217"     
+                },
+                "overlay":{
+                    "name": "overlay",         
+                    "weight": 1,              
+                    "unitID": "2816154217"     
+                }
+            } 
+        },
+        {
+            "name": "adcash",
+            "ver": 1,           
+            "pkSize": 1024 ,     
+            "url": "",    
+            "check": "NoZWQsIG5vdCBvbmx5IGJ5IGhpcyByZWF",    
+            "state": 1,             
+            "appID": "17042",         
+            "pubID": "",         
+            "reserve": "ap82394739483748", 
+            "weight": {
+                "banner": {
+                    "name": "banner",        
+                    "weight": 0,             
+                    "unitID": "http:\/\/www.adcash.com\/script\/java.php?option=rotateur&r=391466"     
+                },
+                "overlay":{
+                    "name": "overlay",         
+                    "weight": 0,              
+                    "unitID": "http:\/\/www.adcash.com\/script\/java.php?option=rotateur&r=392031"     
+                }
+            } 
+        }
+    ]
+}

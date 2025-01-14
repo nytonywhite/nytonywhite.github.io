@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title id="gameTitle"></title>
+
+    <!-- for Google -->
+    <meta name="keywords" content="game" />
+    <meta name="author" content="Leemissen" />
+    <meta name="copyright" content="Mobvista" />
+    <meta name="application-name" content="TALENT GAME BOX" />
+    <meta name="description" content="TALENT GAME BOX. The best casual games.">
+
+
+
+    <!-- for Facebook -->  
+    <meta property="og:title" content="TALENT GAME BOX" />
+    <meta property="og:type" content="game" />
+    <meta property="og:image" id="gameIcon" content="http://www.rayjump.com/images/talent_logo.png" />
+    <meta property="og:description" content="TALENT GAME BOX. The best casual games." /> 
+    <meta property="og:url" content="http://www.rayjump.com">
+    <meta property="og:site_name" content="Mobvista">
+
+    
+<!-- for Twitter -->          
+    <meta name="twitter:card" content="Game" />
+    <meta name="twitter:title" content="TALENT GAME BOX" />
+    <meta name="twitter:description" content="Your mission:no one dies. It rocks me crazy!Come On!" />
+    <meta name="twitter:image" content="http://www.rayjump.com/images/talent_logo.png" />  
+
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta id="viewport" name="viewport" content="width=480, user-scalable=no">
+
+
+
+
+    <link rel="stylesheet" href="css/io-common.css" type="text/css">
+    
+
+</head>
+
+<body>
+    <div id="loading" class="loading-box" style="display:none;">
+        <h1><em id="loading_txt">loading...</em><p id="loader" class="loader"></p></h1>
+    </div>
+    
+    <div id="backMenu" onclick="backToGameList();" style="display:none">
+        <div class="line_A"></div>
+        <div class="line_B"></div>
+    </div>
+
+  <!--   <div id="meun_btn" class="meun trans-all"  onclick="ga('send', 'event', 'click', 'menu');" style="display:none;right:10px;left: inherit;"> -->
+    <div id="meun_btn" class="meun trans-all"  onclick="toggleMaskMenu(true);" style="display:none;right:10px;left: inherit;">
+        <div class="line_1"></div>
+        <div class="line_2"></div>
+        <div class="line_3"></div>
+    </div>
+    <div id="menu_container" class="container" style="display:none">
+        <div class="content">
+            <h1>Menu</h1>
+            <ul class="list_item">
+                <li id="share_btn" onclick="ga('send', 'event', 'click', 'share', 'menu');">Share games</li>
+                <li class="active" onclick="ga('send', 'event', 'click', 'download', 'menu');"><a href="http://api.4joys.com/extend/download?packageName=com.h5game.forfun&channelId=share">Download more games (7.2M)</a>
+                </li>
+            </ul>
+            <div id="cancel_menu_btn" class="cancel btn" onclick="ga('send', 'event', 'click', 'cancel', 'menu');">Cancel</div>
+        </div>
+    </div>
+    <div id="score_container" class="container" style="display:none">
+        <div class="content">
+            <h1>Result</h1>
+            <div id="share_content_box" class="share_content_box">
+                <p><span class="name">关卡</span>:
+                    <span class="value">5</span>
+                </p>
+                <p><span class="name">得分</span>:
+                    <span class="value">98</span>
+                </p>
+                <p><span class="name">星级</span>:
+                    <span class="value">3</span>
+                </p>
+            </div>
+            <ul class="list_item">
+                <li class="active"><a href="http://api.4joys.com/extend/download?packageName=com.h5game.forfun&channelId=share" onclick="ga('send', 'event', 'click', 'download', 'result');">Download more games (7.2M)</a>
+                </li>
+            </ul>
+            <div class="action">
+                <div id="cancel_score_btn" class="cancel btn" onclick="ga('send', 'event', 'click', 'cancel', 'result');">Cancel</div>
+                <div id="share_score_btn" class="share btn" onclick="ga('send', 'event', 'click', 'share', 'result');">Share</div>
+            </div>
+        </div>
+    </div>
+    <div id="share_container" class="container" style="display:none">
+        <div class="content">
+            <h1>Share games</h1>
+            <!-- Go to www.addthis.com/dashboard to customize your tools -->
+            <div class="addthis_sharing_toolbox share-custom row">
+                <a class='addthis_button_facebook facebook' onclick1="shareFacebook()"></a>
+                <a class='addthis_button_twitter twitter'></a>
+                <a class='addthis_button_google_plusone_share googleplus'></a>
+                <a class='addthis_button_pinterest_share pinterest'></a>
+                <a class='addthis_button_buffer buffer'></a>
+                <a class='addthis_button_delicious delicious'></a>
+                <a class='addthis_button_gmail gmail'></a>
+                <a class='addthis_button_tumblr tumblr'></a>
+            </div>
+            <div id="cancel_share_btn" class="cancel btn" onclick="ga('send', 'event', 'click', 'cancel', 'share');">Cancel</div>
+        </div>
+    </div>
+
+    <div id="header" style="display:none;">
+        <img src="images/backHome.png" id="backHome" onclick="backToGameList();">
+
+        <img src="images/showMenu.png" id="extBtn" onclick="toggleMaskMenu(true);">
+    </div>
+
+    <div id="view">
+      <div id="adnView">
+        <mobvistaADN id="bbb" adnType="banner" slide="true" animate="true"></mobvistaADN>
+      </div>
+    </div>
+    <div id="iframe"></div>
+    <iframe id="seoFrame"></iframe>
+
+    
+    <div id="maskMenu" class="mask">
+        <di class="maskContainer" id="maskContainer" style="display:fixed">
+            <div class="maskContent" id="maskContent">
+                <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                <div id="randomGame" class="addthis_sharing_toolbox share-custom row">
+                    <a class='game'></a>
+                    <a class='game'></a>
+                    <a class='game'></a>
+                    <a class='game'></a>
+                    <a class='game'></a>
+                </div>
+                <div class="spliter"></div>
+                <h3>SHARE WITH YOUR FRIENDS</h3>
+                <div class="addthis_sharing_toolbox share-custom row feed">
+                    <a class='addthis_button_facebook facebook' onclick="shareGame('facebook')"></a>
+                    <a class='addthis_button_twitter twitter' onclick="shareGame('twitter')"></a>
+                    <a class='addthis_button_google_plusone_share googleplus' onclick="shareGame('googleplus')"></a>
+                    
+                </div>
+                <div id="cancel_share_btn" class="cancel btn" onclick="toggleMaskMenu(false);">Cancel</div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        function getQueryString(name) {
+          var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+          var r = window.location.search.substr(1).match(reg);
+          if (r != null) return unescape(r[2]); return null;
+        }
+
+        var viewportContent = getQueryString('viewportContent');
+        while(viewportContent&&viewportContent.indexOf('@')>-1){
+            viewportContent = viewportContent.replace('@','=');
+        }
+        var initViewPort;
+        if(viewportContent){
+            switch(viewportContent){
+                case 'extendViewport':
+                    initViewPort = function(){
+                        window['extendViewport']();
+                    };
+                    break;
+                default:
+                    initViewPort = function(){};
+                    document.getElementById('viewport').setAttribute('content',viewportContent);
+            } 
+        }
+
+    </script>
+    <script src="js/init_clear_api.js"></script>
+    <script>
+        
+    
+
+    var menuConfig = getQueryString('hmenu')||'';
+    var menuString = menuConfig.length>0 ? '&hmenu='+ menuConfig : '';
+    var hideMenus = menuConfig.length>0? menuConfig.split(','):[];
+    var hideMenuConfig = {};
+    for(var mi=0;mi<hideMenus.length;mi++){
+        var hideObject = hideMenus[mi];
+        hideMenuConfig[hideObject] = true;
+    }
+    if(hideMenuConfig['hb']||true){//hide headbar in default
+        document.getElementById('header').style.display = 'none';
+        document.getElementById('iframe').style.top = '0px';
+        document.getElementById('backMenu').style.display = 'block';
+        document.getElementById('meun_btn').style.display = 'block';
+    }else{
+        document.getElementById('header').style.display = 'block';
+    }
+
+    if(hideMenuConfig['home']){
+        document.getElementById('backHome').style.display = 'none';
+        document.getElementById('backMenu').style.display = 'none';
+    }
+
+    if(hideMenuConfig['share']){
+        document.getElementById('extBtn').style.display = 'none';
+        document.getElementById('meun_btn').style.display = 'none';
+    }
+
+
+
+    function getWeight(){
+        var weightString = getQueryString('weight');
+        var weightArray = [];
+        try{
+            weightArray = JSON.parse(weightString);
+        }catch(e){
+            weightArray =[];
+        }
+        return weightArray?weightArray:[];
+    }
+    var gameIcon = getQueryString('gameIcon')||'images/slogan_b.png';
+    document.getElementById('gameIcon').setAttribute('content',gameIcon);
+    var title = getQueryString('title');
+    if(title&&title.length>0) document.getElementById('gameTitle').innerHTML = title;
+    var weightArray = getWeight();
+    // document.getElementById('meun_btn').onclick = function(){
+    //     document.getElementById('share_container').style.display = '';
+    // };
+
+    var real_game_url = getQueryString('openLink');
+    // var real_game_url = window.location.href; // 游戏真实url；
+    var share_game_url = window.location.href;//"http://h5.4joys.com/game/view/id/53ce26742d26bae70b8b46fd/u/54c1ff3b4bed2462458b4e82"; // 游戏要分享的url；
+    var share_score_url = "http://www.rayjyump.com"; // 游戏图片请求地址，这个地址后面会自动跟三个参数，分别是游戏关卡，游戏得分，游戏星星
+    var track_url = "http://h5.4joys.com/game/click/id/3/u/54c1ff3b4bed2462458b4e82/flag/95113d1aa9e6bd19653cfa6703bc3164/btn/";
+    var loaded_cb_url = "http://www.rayjyump.com";
+    var httpReferer = "http://www.rayjyump.com";
+    var addthis_config = {
+        ui_use_css: false,
+        ui_508_compliant: true
+    }
+
+    console.log(real_game_url)
+    </script>
+    
+    <script type="text/javascript">
+    var menu = new Ishare({
+
+    });
+    </script>
+<!--     // <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-53ca3e66454ec43f"></script> -->
+
+    
+<!--      // <script src="js/core.js"></script>  -->
+
+
+     <script src="js/Mediation.js"></script>
+     <script src="js/Media.js"></script>
+     <script src="js/Media.AdSense.js"></script>
+     <script src="js/Media.MobFox.js"></script>
+     <script src="js/Media.AdCash.js"></script>
+     <script src="js/Media.Mobvista.js"></script>
+     <script src="js/Util.js"></script>
+ 
+
+    <script type="text/javascript">
+       // console.log(window.iframe)
+        window.iframe.addEventListener('load', function(){
+          var param = iframe.contentWindow.P;
+          iframe.contentWindow.P.showShare=showOverlay;
+          // console.log('load')
+
+
+        });
+
+        function showOverlay(){
+          // var adObj = Util.domHelper('div').attr({
+          //   'id':'adBlock',
+          //   'adnType':'overlay'
+          // }).insertTo(document.body);
+          // adObj.id = "adBlock";
+          // adObj.setAttribute('adnType','overlay');
+          // document.body.appendChild(adObj);
+          // mobvistaADN.initById('adBlock');
+          
+
+
+        
+          if(Media.getMedia('123')) Media.getMedia('123').showCampaign();
+        }
+
+        Mediation.init({
+            'mediaId':'123',
+            'adnType':'overlay',
+            'isAutoShow':false
+          });
+
+    </script>
+
+    <script type="text/javascript">
+        var appId = Util.getQueryString(window.location.href, 'appId')||'17019';
+        var sign = Util.getQueryString(window.location.href, 's')
+            ||'668d571bff3dc16a26ad81642c64504d';
+
+
+
+
+        function backToGameList(){
+            window.location.href 
+            = "http://www.rayjump.com/?s="+sign+"&appId="+appId+menuString;
+        }
+
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-60144653-2', 'auto');
+        ga('send', 'pageview');
+
+        ga('send', 'event', 'load', 'view_test.html', 'success');
+
+    </script>
+    <script language="javascript" type="text/javascript">
+
+    function shareFacebook() {
+        var appID = '423024764523601';
+        var path = 'https://www.facebook.com/dialog/oauth?';
+        var queryParams = 
+                    ['client_id=' + appID,
+                     'redirect_uri=' + 'http://www1.rayjump.com/get_FB_user.html',
+                     'display=' + 'popup',
+                     'scope=' + 'publish_actions',
+                     'response_type=token'];
+        var query = queryParams.join('&');
+        var url = path + query;
+
+        // url = 'get_FB_user.html?#access_token=aaa';
+
+        window.open(url);
+        document.body.focus();
+        // var access_token = window.showModalDialog(url);
+        // window.location.replace(url);
+        // document.getElementById('fbloginWindow').src = url;
+    }
+
+    function setFacebookToken(access_token){
+        console.log(access_token);
+        var gameUrl = document.getElementById('iframe').querySelector('iframe').src;
+        var seoUrl = gameUrl.substr(0,gameUrl.lastIndexOf('/')+1)+'seo_index.html';
+        Util.mobvistaAjax({
+            url: 'https://graph.facebook.com/v2.2/feed?',
+            type: 'get',
+            timeout: '1000',
+            contentType: 'JSON',
+            timestamp: true,
+            dataType: 'json',
+            data:{
+                'access_token':access_token,
+                'link':seoUrl+'?s='+sign+'&appId='+appId+menuString,
+                'format':'json',
+                'message':"Let's play with http://www.rayjump.com. post at:" + new Date().toString(),
+                'method':'post',
+                'pretty':'0',
+                'suppress_http_code':'1'
+            },
+            success: function(result) {
+                console.log(result);
+                alert("Your share is completed!");
+            }
+        });
+    }
+
+    function fbFeed(){
+        FB.login(function(result){
+            var access_token = result.authResponse.accessToken;
+            FB.setAccessToken(access_token);
+            FB.api("/admin/config/services", function (response) {
+                console.log(response);
+
+                FB.api('/me/feed', 'post', {
+                    'message': 'Hello, world!',
+                    'access_token':access_token
+                });
+            });
+            // FB.api('/me/feed', 'post', {message: 'Hello, world!'});
+        }, {scope: 'publish_actions'});
+    }
+    </script>
+
+
+    <script type="text/javascript">
+        var maskContentTimer;
+        function toggleMaskMenu(switcher){
+            if(maskContentTimer) clearTimeout(maskContentTimer);
+            var mask = document.getElementById('maskMenu');
+            var maskContent = document.getElementById('maskContent');
+            if(switcher){
+                mask.className = 'mask show';
+                Util.triggerEvent(window, "menushow");
+                maskContentTimer = setTimeout(function(){
+                    maskContent.className = 'maskContent show';
+                },100);
+
+                var randomGame = document.getElementById('randomGame');
+                var adSlotIndex = Math.floor(Math.random()*randomGame.children.length);
+                var iconHolder = randomGame.children[adSlotIndex];
+                var switchGameIconWidth = iconHolder.clientWidth;
+
+                if(!window.switchIcon) Util.triggerEvent(window, "switchIcon",[switchGameIconWidth,iconHolder]);
+                window.switchIcon = true;
+
+            }else{
+                mask.className = 'mask';
+                Util.triggerEvent(window, "menuhide");
+                maskContentTimer = setTimeout(function(){
+                    maskContent.className = 'maskContent';
+                },100);
+            }
+        }
+
+
+        function requestData() {
+            Util.mobvistaAjax({
+                url:'game_list.json',
+                type: 'get',
+                timeout: '1000',
+                contentType: 'JSON',
+                timestamp: true,
+                dataType: 'json',
+                success: function (data) {
+                    var gamesIcon = document.getElementById('randomGame').querySelectorAll('a');
+                    var randomCheck={},gameLength = data.data['gameList'].rows.length;
+                    for(var i=0;i<gamesIcon.length;i++){
+                        var randomIndex = Math.floor(Math.random()*gameLength);
+                        while(randomCheck[randomIndex]){
+                            randomIndex = Math.floor(Math.random()*gameLength);
+                        }
+                        randomCheck[randomIndex] = true;
+                        var game = data.data['gameList'].rows[randomIndex];
+                        
+                        Util.domHelper(gamesIcon[i]).attr({
+                            'href':'view_test.html?s='+sign+'&appId='+appId+'&openLink='+game.openLink+'&title='+game.name+'&shareLink='+game.openLink+'&gameIcon='+game.icon
+                                +menuString
+                        }).css({
+                            'background-image':'url('+game.icon+')'
+                        });
+                    }
+
+                }
+            });
+        }
+        requestData();
+
+        document.getElementById('maskContainer').onclick = function(e){
+            if(e.toElement.className=='maskContainer'){
+                toggleMaskMenu(false);
+            }
+        }
+        var parentPath = real_game_url.substr(0,real_game_url.lastIndexOf('/')+1);
+        var urlHead =  window.location.href.substr(0,window.location.href.indexOf(parentPath)+1);
+            urlHead = urlHead.substr(0,urlHead.lastIndexOf('/')+1);
+        var openLink = urlHead+parentPath+'seo_index.html?s='+sign+'&appId='+appId+menuString+'&forShare=true';
+        document.getElementById('seoFrame').src = openLink;
+
+        function shareGame(shareType){
+            var seo = document.getElementById('seoFrame');
+            seo.contentWindow.shareGame(shareType);
+        }
+
+    </script>
+    <script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '423024764523601',
+      xfbml      : true,
+      version    : 'v2.2'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+</body>
+
+</html>

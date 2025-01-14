@@ -1,0 +1,26 @@
+<html>
+	<head>
+		<script type="text/javascript">
+			function getQueryString(url, name) {
+				var spliter = '?';
+				if (url.indexOf(spliter) < 0) return null;
+				var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+				var r = url.split(spliter)[1].match(reg);
+				if (r != null) return unescape(r[2]);
+				return null;
+			}
+			var access_token = getQueryString(window.location.href, '#access_token')
+				||'';
+			var expires_in = getQueryString(window.location.href, 'expires_in')||0;
+
+			
+
+			window.returnValue = 'access_token';  
+	        // window.opener=null; 
+			window.opener.setFacebookToken(access_token);
+
+	        window.close();
+		</script>
+	</head>
+	<body></body>
+</html>

@@ -1,0 +1,11 @@
+{
+	"status": 1,
+	"msg": "success",
+	"data": {
+		"getpf": 86400,
+		"aqn": 1,
+		"acn": 1,
+		"plct": 3600,
+		"ttct": 1
+	}
+}
